@@ -1,2 +1,3 @@
 # study_note
-study note of all subject
+
+存放所有学习笔记

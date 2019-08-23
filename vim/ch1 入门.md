@@ -14,5 +14,3 @@ vi编辑器有三种模式：命令模式（command mode）、插入模式（Ins
 
 按下Esc (退出编辑状态)； 接着连按两次大写字母Z
 
-![SVN的不足](./Fig/AddVersionFileToUvproj.png){#fig:AddVersionFileToUvproj}
-
