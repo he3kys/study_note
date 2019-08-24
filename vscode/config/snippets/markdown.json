@@ -1,0 +1,38 @@
+{
+	"insert url":
+	{
+		"description": "插入超链接",
+		"prefix": "iu",
+		"body": ["![$1]($2)"],
+	},
+	"insert Fig":
+	{
+		"description": "插入图片",
+		"prefix": "if",
+		"body": ["","![$1](./Fig/$2.png){#fig:$2}","$0"],
+	},
+	"code block for c":
+	{
+		"description": "插入代码块",
+		"prefix": "cbc",
+		"body": ["","```c","$1","```","$0"],
+	},
+	"code block for java":
+	{
+		"description": "插入代码块",
+		"prefix": "cbj",
+		"body": ["","```java","$1","```","$0"],
+	},
+	"code block for javascript":
+	{
+		"description": "插入代码块",
+		"prefix": "cbjs",
+		"body": ["","```java","$1","```","$0"],
+	},
+	"code block for html":
+	{
+		"description": "插入代码块",
+		"prefix": "cbh",
+		"body": ["","```html","$1","```","$0"],
+	}
+}
