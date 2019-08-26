@@ -4,6 +4,8 @@
 
 ### 插入代码
 
-- 用两行三个```包含
-- 用至少6个空格
+---
+**用```(esc键下面的字符)插入代码** 
+
+![插入代码](./Fig/AddCodeSource.png){#fig:AddCodeSource}
 

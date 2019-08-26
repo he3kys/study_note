@@ -2,37 +2,67 @@
 	"insert url":
 	{
 		"description": "插入超链接",
-		"prefix": "iu",
+		"prefix": "url",
 		"body": ["![$1]($2)"],
 	},
-	"insert Fig":
+	"insert png Fig":
 	{
 		"description": "插入图片",
-		"prefix": "if",
+		"prefix": "figp",
 		"body": ["","![$1](./Fig/$2.png){#fig:$2}","$0"],
 	},
-	"code block for c":
+	"insert gif Fig":
 	{
-		"description": "插入代码块",
-		"prefix": "cbc",
+		"description": "插入图片",
+		"prefix": "figg",
+		"body": ["","![$1](./Fig/$2.png){#fig:$2}","$0"],
+	},
+	"insert png Fig for wiki":
+	{
+		"description": "插入图片",
+		"prefix": "figpw",
+		"body": ["","![$1](uploads/Fig/$2.png){#fig:$2}","$0"],
+	},
+	"insert gif Fig for wiki":
+	{
+		"description": "插入图片",
+		"prefix": "figgw",
+		"body": ["","![$1](uploads/Fig/$2.gif){#fig:$2}","$0"],
+	},
+	"code block of c":
+	{
+		"description": "插入c代码块",
+		"prefix": "cc",
 		"body": ["","```c","$1","```","$0"],
 	},
-	"code block for java":
+	"code block of java":
 	{
-		"description": "插入代码块",
-		"prefix": "cbj",
+		"description": "插入java代码块",
+		"prefix": "cj",
 		"body": ["","```java","$1","```","$0"],
 	},
-	"code block for javascript":
+	"code block of javascript":
 	{
-		"description": "插入代码块",
-		"prefix": "cbjs",
+		"description": "插入javascript代码块",
+		"prefix": "cjs",
 		"body": ["","```java","$1","```","$0"],
 	},
-	"code block for html":
+	"code block of html":
 	{
-		"description": "插入代码块",
-		"prefix": "cbh",
+		"description": "插入html代码块",
+		"prefix": "ch",
 		"body": ["","```html","$1","```","$0"],
-	}
+	},
+	"code block of batch":
+	{
+		"description": "插入batch代码块",
+		"prefix": "cb",
+		"body": ["","```batch","$1","```","$0"],
+	},
+	"insert bold text":
+	{
+		"description": "插入加粗文本",
+		"prefix": "bt",
+		"body": ["**$1**$0 "],
+	},
 }
