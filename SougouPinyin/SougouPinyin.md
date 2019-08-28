@@ -1,4 +1,4 @@
-# 入门
+# SougouPinyin
 
 ### 自定义短语
 

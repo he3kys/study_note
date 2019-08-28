@@ -1,6 +1,8 @@
-# Git Vim
+# Vim 学习笔记
 
-## 入门
+[toc]
+
+## Git Vim
 
 ### vim三种工作模式
 
