@@ -18,7 +18,6 @@
   - [2.9. 缩略](#29-缩略)
   - [2.10. 任务列表](#210-任务列表)
   - [2.11. 目录列表](#211-目录列表)
-- [3. test](#3-test)
 - [4. 参考资料](#4-参考资料)
 
 <!-- /code_chunk_output -->
@@ -85,14 +84,12 @@ The HTML specification is maintained by the W3C.
 
 ### 2.10. 任务列表
 
-- [ ] 写代码
+- [x] 写代码
 - [ ] 做笔记
 
 ### 2.11. 目录列表
 
 Markdown Preview Enhanced 支持你在 markdown 文件中创建 TOC。你可以通过 cmd-shift-p 然后选择 Markdown Preview Enhanced: Create Toc 命令来创建 TOC。多个 TOCs 可以被创建。如果你想要在你的 TOC 中排除一个标题，请在你的标题后面添加{ignore=true} 即可。
-
-## 3. test
 
 ## 4. 参考资料
 1. [markdown preview enhanced 官方文档](https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/)

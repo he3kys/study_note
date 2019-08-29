@@ -3,19 +3,19 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
-
-- [1. rt_thread命名规则](#1-rt_thread命名规则)
-- [2. 杂项](#2-杂项)
-  - [2.1. main函数](#21-main函数)
-  - [2.2. 栈](#22-栈)
-- [3. 函数解析](#3-函数解析)
-  - [3.1. rt_list_init](#31-rt_list_init)
-  - [3.2. rt_list_insert_after](#32-rt_list_insert_after)
-  - [3.3. rt_list_insert_before](#33-rt_list_insert_before)
-  - [3.4. rt_list_remove](#34-rt_list_remove)
-  - [3.5. rt_hw_stack_init](#35-rt_hw_stack_init)
-  - [3.6. rt_list_entry](#36-rt_list_entry)
-  - [3.7. rt_hw_context_switch_to](#37-rt_hw_context_switch_to)
+- [rt_thread学习笔记](#rtthread%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0)
+  - [1. rt_thread命名规则](#1-rtthread%e5%91%bd%e5%90%8d%e8%a7%84%e5%88%99)
+  - [2. 杂项](#2-%e6%9d%82%e9%a1%b9)
+    - [2.1. main函数](#21-main%e5%87%bd%e6%95%b0)
+    - [2.2. 栈](#22-%e6%a0%88)
+  - [3. 函数解析](#3-%e5%87%bd%e6%95%b0%e8%a7%a3%e6%9e%90)
+    - [3.1. rt_list_init](#31-rtlistinit)
+    - [3.2. rt_list_insert_after](#32-rtlistinsertafter)
+    - [3.3. rt_list_insert_before](#33-rtlistinsertbefore)
+    - [3.4. rt_list_remove](#34-rtlistremove)
+    - [3.5. rt_hw_stack_init](#35-rthwstackinit)
+    - [3.6. rt_list_entry](#36-rtlistentry)
+    - [3.7. rt_hw_context_switch_to](#37-rthwcontextswitchto)
 
 <!-- /code_chunk_output -->
 

@@ -1,6 +1,22 @@
 # VSCode学习笔记
 
-[toc]
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [VSCode学习笔记](#vscode%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0)
+	- [1. 配置](#1-%e9%85%8d%e7%bd%ae)
+		- [1.1. settings](#11-settings)
+		- [1.2. snippets : c.json](#12-snippets--cjson)
+		- [1.3. snippets : markdown.json](#13-snippets--markdownjson)
+	- [2. 插件](#2-%e6%8f%92%e4%bb%b6)
+		- [2.1. Markdown TOC](#21-markdown-toc)
+		- [2.2. Markdown preview enhanced](#22-markdown-preview-enhanced)
+			- [为markdown文件添加目录](#%e4%b8%bamarkdown%e6%96%87%e4%bb%b6%e6%b7%bb%e5%8a%a0%e7%9b%ae%e5%bd%95)
+
+<!-- /code_chunk_output -->
+
 
 ## 1. 配置
 
@@ -30,6 +46,7 @@
     "markdown.extension.print.absoluteImgPath": false,
 	"markdown-preview-enhanced.previewTheme": "newsprint.css",
 	"markdown-toc.depthFrom": 2,
+	"editor.minimap.enabled": true,
 }
 ```
 
@@ -214,3 +231,16 @@
 - 为标题增加序号
 - 生成目录
 - 最好选择1.5.5版本，可以实现一级标题不参与编号
+
+在编写markdown文档时，经常会以一级作为首行，如果为此一级标题添加编号，则所有标题都会以1.开头，影响视觉，可以从二级标题开始进行编号，此时需要在settings中增加如下配置：
+
+```json {.line-numbers}
+"markdown-toc.depthFrom": 2,
+```
+
+### 2.2. Markdown preview enhanced
+
+#### 为markdown文件添加目录
+
+将光标定位到需要插入目录的位置 → 按Ctrl+Shift+P调出命令面板 → 输入toc → 选择Markdown preview enhanced:Ctreate TOC → 配置depthFrom=2，让目录从二级标题开始生成 → 点击Ctrl+S生成目录
+

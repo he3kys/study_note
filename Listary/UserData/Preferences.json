@@ -1,0 +1,750 @@
+{
+   "actions": {
+      "base": [ "{44eca225-98f6-489c-b97a-03163e83ce7e}", "{b7e56ba3-2042-4ff7-a499-62d861e2aa69}", "{6ee550e1-8ef3-4025-a673-88d96a48bbc8}", "{81927428-1534-44c4-88aa-f119f682339d}", "{284ecbe8-1ef2-49c9-bd93-f7025519402b}", "{35c0504f-b1a8-4c82-8e32-aa1e68520972}", "{4025f3ed-47e1-4212-9276-de3fbb0786e8}", "{6d2b6aa4-67e5-4dd6-b7ea-c4b30ae8c9a5}", "{edf97959-2c24-47ed-bd7b-3dc5e76b7752}", "{170e8be1-80fa-4afb-a6d7-7bcb1a1eba19}", "{112b153c-23ec-463a-bcae-9eeba93802d8}", "{7971bb91-830f-474b-a976-8bfc9fc001d1}", "{06457068-a652-4c0d-9c3c-a4056dde1f67}", "{e5d9da93-b1dd-4401-8ba1-25f10fca9f93}", "{f56585dd-3f13-4305-8f00-e5599e3f20fe}" ],
+      "items": [ {
+         "command_string": "_action_open_folder",
+         "enabled": true,
+         "guid": "{44eca225-98f6-489c-b97a-03163e83ce7e}",
+         "hotkey": 3330,
+         "keyword": "",
+         "type": "builtin"
+      }, {
+         "command_string": "_action_send_to",
+         "enabled": true,
+         "guid": "{b7e56ba3-2042-4ff7-a499-62d861e2aa69}",
+         "hotkey": 21249,
+         "keyword": "",
+         "type": "builtin"
+      }, {
+         "command_string": "_action_set_keyword",
+         "enabled": true,
+         "guid": "{6ee550e1-8ef3-4025-a673-88d96a48bbc8}",
+         "hotkey": 0,
+         "keyword": "",
+         "type": "builtin"
+      }, {
+         "command_string": "_action_copy",
+         "enabled": true,
+         "guid": "{81927428-1534-44c4-88aa-f119f682339d}",
+         "hotkey": 17154,
+         "keyword": "",
+         "type": "builtin"
+      }, {
+         "command_string": "_action_cut",
+         "enabled": true,
+         "guid": "{284ecbe8-1ef2-49c9-bd93-f7025519402b}",
+         "hotkey": 0,
+         "keyword": "",
+         "type": "builtin"
+      }, {
+         "command_string": "_action_copy_path",
+         "enabled": true,
+         "guid": "{35c0504f-b1a8-4c82-8e32-aa1e68520972}",
+         "hotkey": 17158,
+         "keyword": "",
+         "type": "builtin"
+      }, {
+         "command_string": "_action_copy_folder_path",
+         "enabled": true,
+         "guid": "{4025f3ed-47e1-4212-9276-de3fbb0786e8}",
+         "hotkey": 0,
+         "keyword": "",
+         "type": "builtin"
+      }, {
+         "command_string": "_action_open_with",
+         "enabled": true,
+         "guid": "{6d2b6aa4-67e5-4dd6-b7ea-c4b30ae8c9a5}",
+         "hotkey": 20225,
+         "keyword": "",
+         "type": "builtin"
+      }, {
+         "command_string": "_action_copy_to_current_folder",
+         "enabled": true,
+         "guid": "{edf97959-2c24-47ed-bd7b-3dc5e76b7752}",
+         "hotkey": 0,
+         "keyword": "",
+         "type": "builtin"
+      }, {
+         "command_string": "_action_move_to_current_folder",
+         "enabled": true,
+         "guid": "{170e8be1-80fa-4afb-a6d7-7bcb1a1eba19}",
+         "hotkey": 0,
+         "keyword": "",
+         "type": "builtin"
+      }, {
+         "command_string": "_action_open",
+         "enabled": false,
+         "guid": "{112b153c-23ec-463a-bcae-9eeba93802d8}",
+         "hotkey": 0,
+         "keyword": "",
+         "type": "builtin"
+      }, {
+         "enabled": false,
+         "guid": "{7971bb91-830f-474b-a976-8bfc9fc001d1}",
+         "hotkey": 0,
+         "keyword": "",
+         "param": "\"{action_path}\"",
+         "path": "C:\\Program Files (x86)\\Notepad++\\notepad++.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "title": "Edit with Notepad++",
+         "type": "custom"
+      }, {
+         "enabled": false,
+         "guid": "{06457068-a652-4c0d-9c3c-a4056dde1f67}",
+         "hotkey": 0,
+         "keyword": "",
+         "param": "\"{action_path}\"",
+         "path": "gvim.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "title": "Edit with Vim",
+         "type": "custom"
+      }, {
+         "enabled": false,
+         "guid": "{e5d9da93-b1dd-4401-8ba1-25f10fca9f93}",
+         "hotkey": 0,
+         "keyword": "",
+         "param": "\"{action_path}\"",
+         "path": "atom.cmd",
+         "run_as_admin": false,
+         "slient": false,
+         "title": "Edit with Atom",
+         "type": "custom"
+      }, {
+         "enabled": false,
+         "guid": "{f56585dd-3f13-4305-8f00-e5599e3f20fe}",
+         "hotkey": 0,
+         "keyword": "",
+         "param": "/K \"cd /d \"{action_path}\" & \"C:\\Program Files (x86)\\Git\\bin\\sh.exe\" --login\"",
+         "path": "cmd.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "title": "Git Bash",
+         "type": "custom"
+      } ]
+   },
+   "app_settings": {
+      "by_path": [  ],
+      "by_type": {
+
+      }
+   },
+   "appearance": {
+      "theme": {
+         "file": "Mil.listarytheme.json"
+      }
+   },
+   "check_update": {
+      "last_check_local_version": "5.00.2843",
+      "last_check_time": "13211470335748200"
+   },
+   "general": {
+      "default_file_manager": {
+
+      },
+      "fuzzy_matching": true,
+      "language_file": "zh-CN.ini"
+   },
+   "history": {
+
+   },
+   "hotkey": {
+      "launch_apps": 19458
+   },
+   "keywords": {
+      "builtin_commands": [  ],
+      "custom_commands": [ {
+         "description": "",
+         "display_title": "xshell4",
+         "enabled": true,
+         "keyword": "xs",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "D:\\0.Project\\00.ZH-ZX\\R-Camer\\01.ZH-ZX\\000.\u73E0\u6D77\u7D2B\u7FD4\\R-CAM\u5168\u81EA\u52A8\\\u65B0\u7248\u8D44\u6599\\R-CAM_SOFT\\\u4E32\u53E3\u76D1\u63A7\u8C03\u8BD5\u8F6F\u4EF6\\Xshell_4.0\\Xshell_Portable_XP85\\App\\Xshell\\Xshell.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "eclipse",
+         "enabled": true,
+         "keyword": "ec",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "D:\\SetUp\\Java\\eclipse\\eclipse.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "flash loader",
+         "enabled": true,
+         "keyword": "fl",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\Program Files (x86)\\STMicroelectronics\\Software\\Flash Loader Demo\\STMFlashLoader Demo.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "ScreenToGif",
+         "enabled": true,
+         "keyword": "sc",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "D:\\Program Files (x86)\\ScreenToGif\\ScreenToGif.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "Visual Studio Code",
+         "enabled": true,
+         "keyword": "vsc",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "Wireshark",
+         "enabled": true,
+         "keyword": "wi",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\Program Files\\Wireshark\\Wireshark.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "\u4F01\u4E1A\u5FAE\u4FE1",
+         "enabled": true,
+         "keyword": "qy",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\Program Files (x86)\\WXWork\\WXWork.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "ymdebug",
+         "enabled": true,
+         "keyword": "ym",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "D:\\8.Personal\\[Program]Java\\ymdebug\\exe\\ymdebug.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "Beyond Compare 4",
+         "enabled": true,
+         "keyword": "bc",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\Program Files\\Beyond Compare 4\\BCompare.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "Diamond 3.8 (64-bit)",
+         "enabled": true,
+         "keyword": "di",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\lscc\\diamond\\3.8_x64\\bin\\nt64\\pnmain.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "FPWIN GR7",
+         "enabled": true,
+         "keyword": "fp",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\Program Files (x86)\\Panasonic-ID SUNX Control\\FPWIN GR7\\FPWIN_GR7.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "mbpoll.exe",
+         "enabled": true,
+         "keyword": "mb",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "D:\\SetUp\\\u4E0B\u4F4D\u673A\u5E38\u7528\u8F6F\u4EF6\\modbus\\modbus 3.60b\\mbpoll.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "share",
+         "enabled": true,
+         "keyword": "sh",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "D:\\share.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "UartAssist",
+         "enabled": true,
+         "keyword": "ua",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "D:\\\u684C\u9762\\\u5FEB\u6377\u65B9\u5F0F\\UartAssist.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "Title",
+         "enabled": true,
+         "keyword": "keyword",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "VisualTFT",
+         "enabled": true,
+         "keyword": "Vi",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\Program Files (x86)\\VisualTFT\\VisualTFT.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "\u7F51\u6613\u6709\u9053\u8BCD\u5178",
+         "enabled": true,
+         "keyword": "yd",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\Users\\01295\\AppData\\Local\\Youdao\\dict\\Application\\YoudaoDict.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "\u6709\u9053\u4E91\u7B14\u8BB0",
+         "enabled": true,
+         "keyword": "ydy",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\Program Files (x86)\\Youdao\\YoudaoNote\\YoudaoNote.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "\u5FAE\u4FE1",
+         "enabled": true,
+         "keyword": "wx",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\Program Files (x86)\\Tencent\\WeChat\\WeChat.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      }, {
+         "description": "",
+         "display_title": "Foxmail",
+         "enabled": true,
+         "keyword": "mail",
+         "only_show_in_launcher": false,
+         "param": "",
+         "path": "C:\\Foxmail 7.2\\Foxmail.exe",
+         "run_as_admin": false,
+         "slient": false,
+         "working_dir": ""
+      } ],
+      "folder": [ {
+         "enabled": true,
+         "keyword": "setup",
+         "name": "SetUp",
+         "path": "D:\\SetUp"
+      }, {
+         "enabled": true,
+         "keyword": "tc",
+         "name": "00.SH_TC",
+         "path": "D:\\0.Project\\00.SH_TC"
+      }, {
+         "enabled": true,
+         "keyword": "jly",
+         "name": "00.SZ_JLY",
+         "path": "D:\\0.Project\\00.SZ_JLY"
+      }, {
+         "enabled": true,
+         "keyword": "wx",
+         "name": "00.SZ_WX",
+         "path": "D:\\0.Project\\00.SZ_WX"
+      }, {
+         "enabled": true,
+         "keyword": "tzx",
+         "name": "00.Tai-ZX",
+         "path": "D:\\0.Project\\00.Tai-ZX"
+      }, {
+         "enabled": true,
+         "keyword": "zzx",
+         "name": "00.ZH-ZX",
+         "path": "D:\\0.Project\\00.ZH-ZX"
+      }, {
+         "enabled": true,
+         "keyword": "pt",
+         "name": "\u786C\u4EF6\u4E0B\u4F4D\u673A\u901A\u7528\u5E73\u53F0-20181114",
+         "path": "D:\\0.Project\\02.YanMade\\\u786C\u4EF6\u4E0B\u4F4D\u673A\u901A\u7528\u5E73\u53F0-20181114"
+      }, {
+         "enabled": true,
+         "keyword": "zl",
+         "name": "7.\u8D44\u6599",
+         "path": "D:\\7.\u8D44\u6599"
+      }, {
+         "enabled": true,
+         "keyword": "gith",
+         "name": "GitHub",
+         "path": "D:\\GitHub"
+      }, {
+         "enabled": true,
+         "keyword": "home",
+         "name": "Home",
+         "path": "D:\\Home"
+      }, {
+         "enabled": true,
+         "keyword": "md",
+         "name": "MarkDown\u5DE5\u4F5C\u533A",
+         "path": "D:\\VSCodeWorkSpace\\MarkDown.code-workspace"
+      }, {
+         "enabled": true,
+         "keyword": "list",
+         "name": "listary user \u914D\u7F6E\u8DEF\u5F84",
+         "path": "C:\\Users\\01295\\AppData\\Roaming\\Listary\\UserData"
+      }, {
+         "enabled": true,
+         "keyword": "set",
+         "name": "vscode user settings \u8DEF\u5F84",
+         "path": "C:\\Users\\01295\\AppData\\Roaming\\Code\\User"
+      }, {
+         "enabled": true,
+         "keyword": "snip",
+         "name": "vscode snippets \u914D\u7F6E\u8DEF\u5F84",
+         "path": "C:\\Users\\01295\\AppData\\Roaming\\Code\\User\\snippets"
+      }, {
+         "enabled": true,
+         "keyword": "yf1",
+         "name": "\u8FDC\u7A0B\u684C\u9762\u7814\u53D11",
+         "path": "D:\\\u684C\u9762\\\u6587\u4EF6\\i7--chrome - yanfa1.rdp"
+      } ],
+      "web_search": [ {
+         "enabled": true,
+         "icon": {
+
+         },
+         "keyword": "mgit",
+         "title": "my git",
+         "url": "https://github.com/he3kys/study_note/tree/dev"
+      }, {
+         "enabled": true,
+         "icon": {
+
+         },
+         "keyword": "fy",
+         "title": "google translate",
+         "url": "https://translate.google.cn/"
+      }, {
+         "enabled": true,
+         "icon": {
+
+         },
+         "keyword": "rt",
+         "title": "rt_thread",
+         "url": "https://www.rt-thread.org/"
+      }, {
+         "enabled": true,
+         "icon": {
+
+         },
+         "keyword": "zd",
+         "title": "Openedv",
+         "url": "http://www.openedv.com/"
+      }, {
+         "enabled": true,
+         "icon": {
+
+         },
+         "keyword": "yh",
+         "title": "proewildfire",
+         "url": "http://www.proewildfire.cn/"
+      } ]
+   },
+   "launch_apps": {
+      "search_folders": {
+
+      }
+   },
+   "menu_lists": {
+      "items": [ {
+         "id": 10,
+         "root_item": {
+            "items": [ {
+               "anchor": "submenu_favorite",
+               "items": [ {
+                  "anchor": "menu_list_tc_fav_menu",
+                  "id": 400,
+                  "type": "menu_list"
+               }, {
+                  "anchor": "menu_list_favorite_global",
+                  "id": 100,
+                  "type": "menu_list"
+               }, {
+                  "anchor": "menu_list_favorite_application",
+                  "id": 101,
+                  "type": "menu_list"
+               } ],
+               "type": "submenu"
+            }, {
+               "anchor": "submenu_recent",
+               "items": [ {
+                  "anchor": "menu_list_recent",
+                  "id": 200,
+                  "type": "menu_list"
+               } ],
+               "type": "submenu"
+            }, {
+               "anchor": "submenu_smart_commands",
+               "items": [ {
+                  "anchor": "menu_list_smart_commands",
+                  "id": 300,
+                  "type": "menu_list"
+               } ],
+               "type": "submenu"
+            } ],
+            "type": "submenu"
+         }
+      }, {
+         "id": 11,
+         "root_item": {
+            "items": [ {
+               "anchor": "menu_list_tc_fav_menu",
+               "id": 400,
+               "type": "menu_list"
+            }, {
+               "anchor": "menu_list_favorite_global",
+               "id": 100,
+               "type": "menu_list"
+            }, {
+               "anchor": "separator",
+               "type": "separator"
+            }, {
+               "anchor": "submenu_recent",
+               "items": [ {
+                  "anchor": "menu_list_recent",
+                  "id": 200,
+                  "type": "menu_list"
+               } ],
+               "type": "submenu"
+            }, {
+               "anchor": "separator",
+               "type": "separator"
+            }, {
+               "anchor": "command_OpenedFolders",
+               "command": "_OpenedFolders",
+               "type": "command"
+            }, {
+               "anchor": "submenu_smart_commands",
+               "items": [ {
+                  "anchor": "menu_list_smart_commands",
+                  "id": 300,
+                  "type": "menu_list"
+               } ],
+               "type": "submenu"
+            }, {
+               "anchor": "command_Options",
+               "command": "_Options",
+               "type": "command"
+            } ],
+            "type": "submenu"
+         }
+      }, {
+         "id": 100,
+         "root_item": {
+            "items": [  ],
+            "type": "submenu"
+         }
+      }, {
+         "id": 300,
+         "root_item": {
+            "items": [ {
+               "anchor": "command_QuickSwitch",
+               "command": "_QuickSwitch",
+               "type": "command"
+            }, {
+               "anchor": "command_OpenSelectedFile",
+               "command": "_OpenSelectedFile",
+               "type": "command"
+            }, {
+               "anchor": "command_OpenedFolders",
+               "command": "_OpenedFolders",
+               "type": "command"
+            }, {
+               "anchor": "separator",
+               "type": "separator"
+            }, {
+               "anchor": "command_Explore",
+               "command": "_Explore",
+               "type": "command"
+            }, {
+               "anchor": "command_Cmd",
+               "command": "_Cmd",
+               "type": "command"
+            }, {
+               "anchor": "command_CopyFolderPath",
+               "command": "_CopyFolderPath",
+               "type": "command"
+            }, {
+               "anchor": "command_CopyFilePaths",
+               "command": "_CopyFilePaths",
+               "type": "command"
+            }, {
+               "anchor": "command_GoToAppFolder",
+               "command": "_GoToAppFolder",
+               "type": "command"
+            }, {
+               "anchor": "command_ExploreAppFolder",
+               "command": "_ExploreAppFolder",
+               "type": "command"
+            }, {
+               "anchor": "command_ExportToExcel",
+               "command": "_ExportToExcel",
+               "type": "command"
+            }, {
+               "anchor": "separator",
+               "type": "separator"
+            }, {
+               "anchor": "command_ToggleFileExt",
+               "command": "_ToggleFileExt",
+               "type": "command"
+            }, {
+               "anchor": "command_ToggleHidden",
+               "command": "_ToggleHidden",
+               "type": "command"
+            }, {
+               "anchor": "separator",
+               "type": "separator"
+            }, {
+               "anchor": "command_DisableListary",
+               "command": "_DisableListary",
+               "type": "command"
+            }, {
+               "anchor": "separator",
+               "type": "separator"
+            }, {
+               "anchor": "command_Options",
+               "command": "_Options",
+               "type": "command"
+            } ],
+            "type": "submenu"
+         }
+      }, {
+         "id": 500,
+         "root_item": {
+            "items": [ {
+               "anchor": "menu_list_favorite_global",
+               "id": 100,
+               "type": "menu_list"
+            }, {
+               "anchor": "separator",
+               "type": "separator"
+            }, {
+               "anchor": "submenu_recent",
+               "items": [ {
+                  "anchor": "menu_list_recent",
+                  "id": 200,
+                  "type": "menu_list"
+               } ],
+               "type": "submenu"
+            }, {
+               "anchor": "separator",
+               "type": "separator"
+            }, {
+               "anchor": "command_Options",
+               "command": "_Options",
+               "type": "command"
+            } ],
+            "type": "submenu"
+         }
+      }, {
+         "id": 501,
+         "root_item": {
+            "items": [ {
+               "anchor": "command_Options",
+               "command": "_Options",
+               "type": "command"
+            }, {
+               "anchor": "separator",
+               "type": "separator"
+            }, {
+               "anchor": "command_Tutorial",
+               "command": "_Tutorial",
+               "type": "command"
+            }, {
+               "anchor": "command_OnlineHelp",
+               "command": "_OnlineHelp",
+               "type": "command"
+            }, {
+               "anchor": "command_CheckUpdates",
+               "command": "_CheckUpdates",
+               "type": "command"
+            }, {
+               "anchor": "command_About",
+               "command": "_About",
+               "type": "command"
+            }, {
+               "anchor": "separator",
+               "type": "separator"
+            }, {
+               "anchor": "command_Exit",
+               "command": "_Exit",
+               "type": "command"
+            } ],
+            "type": "submenu"
+         }
+      } ],
+      "version": 0
+   },
+   "pro_license": {
+      "email": "soft@instant-demo.com",
+      "name": "www.dayanzai.me",
+      "regcode": "JE4V8T3M96PWT4SUCNZNVZ37XKLBU2QWN64LEJQ3VHY7MPL6KY2R5SQZ76QFFTKPVVE8JBVEAME8MMBRHRGF2P6MAJG7ZSQYMUY2PGTQ2EG3W2YHTU2CFWL7SE6THU3QTAL3U894S2BWA9629EFCXYYYG3S65WEQ5R234G26AT52UWD27PNENP4GR2EKKDK6"
+   },
+   "projects": {
+
+   },
+   "status": {
+      "disk_search_started_successfully_last_time": true
+   },
+   "tip": {
+      "action_hotkey": false,
+      "tutorial_listary5": false
+   },
+   "version": 2,
+   "window_types": {
+
+   }
+}
