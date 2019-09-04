@@ -1,26 +1,26 @@
-# VSCode学习笔记
+# 1. VSCode学习笔记
 
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
-- [VSCode学习笔记](#vscode%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0)
-	- [1. 配置](#1-%e9%85%8d%e7%bd%ae)
-		- [1.1. settings](#11-settings)
-		- [1.2. snippets : c.json](#12-snippets--cjson)
-		- [1.3. snippets : markdown.json](#13-snippets--markdownjson)
-	- [2. 插件](#2-%e6%8f%92%e4%bb%b6)
-		- [2.1. Markdown TOC](#21-markdown-toc)
-		- [2.2. Markdown preview enhanced](#22-markdown-preview-enhanced)
-			- [为markdown文件添加目录](#%e4%b8%bamarkdown%e6%96%87%e4%bb%b6%e6%b7%bb%e5%8a%a0%e7%9b%ae%e5%bd%95)
+- [1.1. 配置](#11-配置)
+  - [1.1.1. settings](#111-settings)
+  - [1.1.2. snippets : c.json](#112-snippets-cjson)
+  - [1.1.3. snippets : markdown.json](#113-snippets-markdownjson)
+  - [1.1.4. snippets中可以使用的变量](#114-snippets中可以使用的变量)
+- [1.2. 插件](#12-插件)
+  - [1.2.1. Markdown TOC](#121-markdown-toc)
+  - [1.2.2. Markdown preview enhanced](#122-markdown-preview-enhanced)
+    - [1.2.2.1. 为markdown文件添加目录](#1221-为markdown文件添加目录)
 
 <!-- /code_chunk_output -->
 
 
-## 1. 配置
+## 1.1. 配置
 
-### 1.1. settings
+### 1.1.1. settings
 
 在vscode中按下Ctrl+Shit+P，然后输入settings,选择preferences:open settings(JSON)，打开配置文件
 
@@ -50,7 +50,7 @@
 }
 ```
 
-### 1.2. snippets : c.json
+### 1.1.2. snippets : c.json
 
 点击左下角配置按钮 → user snippets → 选择c.json
 
@@ -136,7 +136,7 @@
 }
 ```
 
-### 1.3. snippets : markdown.json
+### 1.1.3. snippets : markdown.json
 
 点击左下角配置按钮 → user snippets → 选择markdown.json
 
@@ -222,15 +222,98 @@
 	},
 }
 ```
+### 1.1.4. snippets中可以使用的变量
 
-## 2. 插件
+The following variables can be used:
 
-### 2.1. Markdown TOC
+	TM_SELECTED_TEXT The currently selected text or the empty string
+	TM_CURRENT_LINE The contents of the current line
+	TM_CURRENT_WORD The contents of the word under cursor or the empty string
+	TM_LINE_INDEX The zero-index based line number
+	TM_LINE_NUMBER The one-index based line number
+	TM_FILENAME The filename of the current document
+	TM_FILENAME_BASE The filename of the current document without its extensions
+	TM_DIRECTORY The directory of the current document
+	TM_FILEPATH The full file path of the current document
+	CLIPBOARD The contents of your clipboard
+	WORKSPACE_NAME The name of the opened workspace or folder
+
+For inserting the current date and time:
+
+    CURRENT_YEAR The current year
+    CURRENT_YEAR_SHORT The current year’s last two digits
+    CURRENT_MONTH The month as two digits (example ‘02’)
+    CURRENT_MONTH_NAME The full name of the month (example ‘July’)
+    CURRENT_MONTH_NAME_SHORT The short name of the month (example ‘Jul’)
+    CURRENT_DATE The day of the month
+    CURRENT_DAY_NAME The name of day (example ‘Monday’)
+    CURRENT_DAY_NAME_SHORT The short name of the day (example ‘Mon’)
+    CURRENT_HOUR The current hour in 24-hour clock format
+    CURRENT_MINUTE The current minute
+    CURRENT_SECOND The current second
+
+For inserting line or block comments, honoring the current language:
+
+    BLOCK_COMMENT_START Example output: in PHP /* or in HTML <!–
+    BLOCK_COMMENT_END Example output: in PHP */ or in HTML -->
+    LINE_COMMENT Example output: in PHP // or in HTML <!-- -->
+
+
+```json {.line-numbers}
+
+"c_header": {
+        "prefix": "c_header",
+        "body": [
+            "/**",
+            " * Copyright © 2019 Silvester. All rights reserved.",
+            " * ",
+            " * @author: Silvester",
+            " * @date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE ",
+            " */",
+            "#include <stdio.h>",
+            "#include <stdlib.h>",
+            "#include <string.h>",
+            "",
+            "int main() {",
+            "    /****** your code ******/",
+            "    $0",
+            "    return 0;",
+            "}"
+        ]
+        // "description": "Log output to console"
+    }
+```
+
+```c {.line-numbers}
+
+/**
+ * Copyright © 2019 Silvester. All rights reserved.
+ * 
+ * @author: Silvester
+ * @date: 2019-05-20 
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    /****** your code ******/
+    
+    return 0;
+}
+```
+
+
+## 1.2. 插件
+
+### 1.2.1. Markdown TOC
 
 **功能：**
 - 为标题增加序号
 - 生成目录
 - 最好选择1.5.5版本，可以实现一级标题不参与编号
+
+**从二级标题开始编号**
 
 在编写markdown文档时，经常会以一级作为首行，如果为此一级标题添加编号，则所有标题都会以1.开头，影响视觉，可以从二级标题开始进行编号，此时需要在settings中增加如下配置：
 
@@ -238,9 +321,15 @@
 "markdown-toc.depthFrom": 2,
 ```
 
-### 2.2. Markdown preview enhanced
+**为标题插入编号**
 
-#### 为markdown文件添加目录
+点击右键 → 点击markdown sections:insert/update
+
+*注：1.5.5版本插入目录时会错乱，建议使用markdown preview enhanced添加目录*
+
+### 1.2.2. Markdown preview enhanced
+
+#### 1.2.2.1. 为markdown文件添加目录
 
 将光标定位到需要插入目录的位置 → 按Ctrl+Shift+P调出命令面板 → 输入toc → 选择Markdown preview enhanced:Ctreate TOC → 配置depthFrom=2，让目录从二级标题开始生成 → 点击Ctrl+S生成目录
 
