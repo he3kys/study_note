@@ -9,7 +9,9 @@
     - [1.0.3. 合并分支](#103-合并分支)
     - [1.0.4. 删除分支](#104-删除分支)
 - [2. submodule](#2-submodule)
-- [3. 参考文档](#3-参考文档)
+- [3. FAQ](#3-faq)
+    - [3.0.5. gitignore 文件不生效](#305-gitignore-文件不生效)
+- [4. 参考文档](#4-参考文档)
 
 <!-- /code_chunk_output -->
 
@@ -38,7 +40,20 @@
 
 # 2. submodule
 
+# 3. FAQ 
 
-# 3. 参考文档
+### 3.0.5. gitignore 文件不生效
+
+.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交：
+
+
+```batch {.line-numbers}
+git rm -r --cached .
+git add .
+git commit -m 'update .gitignore'
+```
+
+
+# 4. 参考文档
 
 - [Git分支管理策略](http://www.ruanyifeng.com/blog/2012/07/git.html)

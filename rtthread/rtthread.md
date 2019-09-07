@@ -1,3 +1,18 @@
+---
+# pandoc设置
+output:
+  pdf_document:
+    path: Habits.pdf
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    highlight: tango
+# 打印背景色
+# 保存文件时自动生成
+# export_on_save:
+#   pandoc: true
+---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -70,6 +85,9 @@ rt_inline void rt_list_insert_after(rt_list_t *l, rt_list_t *n)
     n->prev = l;
 }
 ```
+
+
+
 
 ![在双向链表后面插入一个节点](./Fig/rt_list_insert_after.jpg){#fig:rt_list_insert_after}
 
