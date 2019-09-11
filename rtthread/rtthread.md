@@ -1,16 +1,8 @@
 ---
-# pandoc设置
-output:
-  pdf_document:
-    path: Habits.pdf
-    toc: true
-    toc_depth: 2
-    number_sections: true
-    highlight: tango
-# 打印背景色
-# 保存文件时自动生成
-# export_on_save:
-#   pandoc: true
+title: "Habits"
+author: John Doe
+date: March 22, 2005
+output: pdf_document
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
