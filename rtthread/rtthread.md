@@ -472,23 +472,7 @@ PendSV_Handler   PROC
     CBZ     r1, switch_to_thread    ; skip register save at the first time
 
     MRS     r1, psp                 ; get from thread stack pointer
-
-    IF      {FPU} != "SoftVFP"
-    TST     lr, #0x10               ; if(!EXC_RETURN[4])
-    VSTMFDEQ  r1!, {d8 - d15}       ; push FPU register s16~s31
-    ENDIF
-
     STMFD   r1!, {r4 - r11}         ; push r4 - r11 register
-
-    IF      {FPU} != "SoftVFP"
-    MOV     r4, #0x00               ; flag = 0
-
-    TST     lr, #0x10               ; if(!EXC_RETURN[4])
-    MOVEQ   r4, #0x01               ; flag = 1
-
-    STMFD   r1!, {r4}               ; push flag
-    ENDIF
-
     LDR     r0, [r0]
     STR     r1, [r0]                ; update from thread stack pointer
 
@@ -501,6 +485,7 @@ switch_to_thread
 
 pendsv_exit
     ; restore interrupt
+    ;上下文切换完成，恢复中断
     MSR     PRIMASK, r2
 
     IF      {FPU} != "SoftVFP"
@@ -509,8 +494,15 @@ pendsv_exit
     BICNE   lr, lr, #0x10           ; lr &= ~(1 << 4), set FPCA.
     ENDIF
 
+    ;确保异常返回使用的栈指针是 PSP，即 LR 寄存器的位 2 要为 1。
     ORR     lr, lr, #0x04
+
+    ; 异常返回，这个时候栈中的剩下内容将会自动加载到 CPU 寄存器：
+    ; xPSR， PC（线程入口地址）， R14， R12， R3， R2， R1， R0（线程的形参）
+    ; 同时 PSP 的值也将更新，即指向线程栈的栈顶
     BX      lr
+
+    ; PendSV_Handler 子程序结束
     ENDP
 ```
 ---
@@ -539,6 +531,21 @@ pendsv_exit
 第1行：加载 rt_interrupt_from_thread 的地址到 r0。
 第2行：加载 rt_interrupt_from_thread 的值到 r1
 第3行：判断 r1 是否为 0，为 0 则跳转到 switch_to_thread， 第一次线程切换时 rt_interrupt_from_thread 肯定为 0，则跳转到 switch_to_thread。
+
+---
+
+```asm {.line-numbers}
+    MRS     r1, psp                 ; get from thread stack pointer
+    STMFD   r1!, {r4 - r11}         ; push r4 - r11 register
+    LDR     r0, [r0]
+    STR     r1, [r0]                ; update from thread stack pointer
+```
+功能：rt_interrupt_from_thread 的值不为 0 则表示不是第一次线程切换，需要先保存上文。当进入PendSVC Handler 时，上一个线程运行的环境即： xPSR， PC（线程入口地址）， R14， R12， R3， R2， R1， R0（线程的形参）这些 CPU 寄存器的值会自动保存到线程的栈中，并更新 PSP 的值，剩下的 r4~r11 需要手动保存。
+
+第1行：获取线程栈指针到 r1
+第2行：将 CPU 寄存器 r4~r11 的值存储到 r1 指向的地址(每操作一次地址将递减一次)。
+第3行：加载 r0 指向值到 r0，即 r0=rt_interrupt_from_thread。
+第4行：将 r1 的值存储到 r0，即更新线程栈 sp
 
 ---
 
