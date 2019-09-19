@@ -1,9 +1,10 @@
 %导言区
-\documentclass{book} %article,book,report,letter , 可以通过修改文档类修改显示格式
+\documentclass[10pt]{book}%normalsize 为10磅
 
 \usepackage{ctex} %ctex用于解析中文
 
-\newcommand\degree{^\circ} %newcommand用于定义新的命令
+%自定义myfont命令，实现格式与内容分析
+\newcommand{\myfont}{\textit{\textbf{\textsf{Fancy Text}}}}
 
 % 标题
 \title{杂谈勾股定理}
@@ -14,10 +15,52 @@
 \begin{document}
     \maketitle %输出标题
 
-    设直角三角形 $ABC$ ,其中 $\angle C=90\degree$ , 则有：
-    \begin{equation} % equation产生带编号的行间公式
-        AB^2 = BC^2 + AC^2
-    \end{equation}
+    %字体族设置（罗马字体，无衬线字体，打字机字体）
+    \textrm{Roman Family} %罗马字体
+    \textsf{Sans serif family} %无衬线字体
+    \texttt{typewriter family} %打字机字体
 
+    \rmfamily Roman Family %声明后面的字体为罗马字体，与textrm功能类似
+    \sffamily sans serif family
+    \ttfamily typewriter family
+
+    % 字体系列设置
+    \textmd{Medium Series}
+    \textbf{Boldface Series}
+
+    \mdseries medium Series
+    \bfseries boldface Series
+
+
+    %字体形状设置(直立，斜体，伪斜体，小型大写)
+    \textup{Upright Shape}
+    \textit{Italic Shape}
+    \textsl{Slanted Shape}
+    \textsc{Small Caps Shape}
+
+    \upshape upright shape
+
+    %中文字体
+    {\songti 宋体} \quad {\heiti 黑体} \quad {\fangsong 仿宋} \quad {\kaishu 楷书} \quad  
+
+    中文字体的\textbf{粗体}与\textit{斜体}
+
+    %字体大小（相对于normalsize而言，normalsize在文档类中声明）
+    {\tiny Hello}\\
+    {\scriptsize Hello}\\
+    {\footnotesize Hello}\\
+    {\small Hello}\\
+    {\normalsize Hello}\\
+    {\Large Hello}\\
+    {\LARGE Hello}\\
+    {\huge Hello}\\
+    {\Huge Hello}\\
+
+    %中文字号设置
+    \zihao{-0} 你好
+    \zihao{5} 你好
+
+    %自定义命令
+    \myfont
 \end{document}
 
