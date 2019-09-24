@@ -36,6 +36,9 @@
 > git checkout develop
 > git merge --no-ff feature
 
+参考：
+[git-merge完全解析](https://www.jianshu.com/p/58a166f24c81)
+
 ### 1.0.4. 删除分支
 
 > git branch -d feature
