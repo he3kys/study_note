@@ -7,6 +7,9 @@
   - [1.1. latex源文件基本构成](#11-latex源文件基本构成)
   - [1.2. latex中的中文处理办法](#12-latex中的中文处理办法)
   - [1.3. Latex 字体设置](#13-latex-字体设置)
+  - [1.4. LaTeX文档的基本结构](#14-latex文档的基本结构)
+  - [1.5. LaTeX中的特殊字符](#15-latex中的特殊字符)
+    - [空白字符](#空白字符)
 - [2. 资料](#2-资料)
   - [2.1. 参考文档](#21-参考文档)
 
@@ -186,6 +189,54 @@
 
 
 ```
+
+## 1.4. LaTeX文档的基本结构
+
+
+```latex {.line-numbers}
+%导言区
+\documentclass{ctexbook}
+
+
+\ctexset {
+chapter = {
+format = \raggedright,
+},
+section = {
+name = {第,节},
+number = \chinese{section},
+}
+}
+
+%正文区
+\begin{document}
+    \tableofcontents
+
+    \chapter{绪论}
+    \section{引言}
+    \section{试验方法}
+
+    \chapter{分析}
+    \section{实验结果}
+    \subsection{title}
+    \subsection{数据}
+    \subsection{图表}
+    \subsection{数据分析}
+    \subsubsection{title}
+    \subsubsection{结果}
+    \subsubsection{数据分析}
+
+    \chapter{总结}
+    \section{结论}
+    \section{致谢}
+
+\end{document}
+```
+
+## 1.5. LaTeX中的特殊字符
+
+### 空白字符
+![空白字符](./Fig/BlankCharacter.png){#fig:BlankCharacter}
 
 
 # 2. 资料

@@ -1,66 +1,41 @@
 %导言区
-\documentclass[10pt]{book}%normalsize 为10磅
+\documentclass{article}
 
-\usepackage{ctex} %ctex用于解析中文
-
-%自定义myfont命令，实现格式与内容分析
-\newcommand{\myfont}{\textit{\textbf{\textsf{Fancy Text}}}}
-
-% 标题
-\title{杂谈勾股定理}
-\author{张三}
-\date{\today}
+\usepackage{ctex}
 
 %正文区
 \begin{document}
-    \maketitle %输出标题
 
-    %字体族设置（罗马字体，无衬线字体，打字机字体）
-    \textrm{Roman Family} %罗马字体
-    \textsf{Sans serif family} %无衬线字体
-    \texttt{typewriter family} %打字机字体
+    \section{空白字符}
 
-    \rmfamily Roman Family %声明后面的字体为罗马字体，与textrm功能类似
-    \sffamily sans serif family
-    \ttfamily typewriter family
+    %1em（当前字体中M的宽度）
+    a\quad b %一个空格
 
-    % 字体系列设置
-    \textmd{Medium Series}
-    \textbf{Boldface Series}
+    %2em
+    a\qquad b
 
-    \mdseries medium Series
-    \bfseries boldface Series
+    %逗号和thinspace产生1/6个em
+    a\,b
 
+    a\thinspace b
 
-    %字体形状设置(直立，斜体，伪斜体，小型大写)
-    \textup{Upright Shape}
-    \textit{Italic Shape}
-    \textsl{Slanted Shape}
-    \textsc{Small Caps Shape}
+    %0.5em
+    a\enspace b
 
-    \upshape upright shape
+    %空格
+    a\ b
 
-    %中文字体
-    {\songti 宋体} \quad {\heiti 黑体} \quad {\fangsong 仿宋} \quad {\kaishu 楷书} \quad  
+    %硬空格
+    a~b
 
-    中文字体的\textbf{粗体}与\textit{斜体}
+    
 
-    %字体大小（相对于normalsize而言，normalsize在文档类中声明）
-    {\tiny Hello}\\
-    {\scriptsize Hello}\\
-    {\footnotesize Hello}\\
-    {\small Hello}\\
-    {\normalsize Hello}\\
-    {\Large Hello}\\
-    {\LARGE Hello}\\
-    {\huge Hello}\\
-    {\Huge Hello}\\
-
-    %中文字号设置
-    \zihao{-0} 你好
-    \zihao{5} 你好
-
-    %自定义命令
-    \myfont
+    \section{\LaTeX 控制符}
+    \section{\TeX 控制符}
+    \section{排版符号}
+    \section{引号}
+    \section{连字符}
+    \section{非英文字符}
+    \section{重音符号（以O为例）}
 \end{document}
 

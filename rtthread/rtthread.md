@@ -1,10 +1,3 @@
----
-title: "Habits"
-author: John Doe
-date: March 22, 2005
-output: pdf_document
----
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -564,4 +557,3 @@ switch_to_thread
 第4行：加载 rt_interrupt_to_thread 的值到 r1，即 sp。
 第5行：将线程栈指针 r1(操作之前先递减)指向的内容加载到 CPU 寄存器 r4~r11。
 第6行：将线程栈指针更新到 PSP。
-
