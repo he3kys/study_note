@@ -28,7 +28,7 @@
 - 本地文件搜索：[Everything](https://www.cnblogs.com/EltonLiang/p/6200754.html) , [Listary](https://www.cnblogs.com/EltonLiang/p/6242033.html)
 - 磁盘文件大小分析：[TreeSize](https://treesize.en.softonic.com/) , [FolderSizes](http://www.ouyaoxiazai.com/soft/stgj/45/28681.html)
 - 类Chrome标签的资源管理器 [Clover](http://cn.ejie.me/) 
-- 
+- 快速小巧的PDF阅读器[PDF-XChange Viewer](https://pdf-xchange-viewer.en.softonic.com/)
 
 ### 1.1.3. 下载软件
 
