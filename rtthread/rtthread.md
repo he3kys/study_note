@@ -127,7 +127,7 @@ rt_inline void rt_list_remove(rt_list_t *n)
 
 
 ## 3.5. rt_hw_stack_init
-```c {.line-numbers}
+~~~c {.line-numbers}
 rt_uint8_t *rt_hw_stack_init(void       *tentry,
                              void       *parameter,
                              rt_uint8_t *stack_addr, /*线程栈顶地址-4*/
@@ -177,7 +177,7 @@ rt_uint8_t *rt_hw_stack_init(void       *tentry,
     return stk;
 }
 
-```
+~~~
 
 **stack_frame结构体定义**
 
