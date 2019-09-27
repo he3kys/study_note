@@ -10,7 +10,7 @@
 - --template=yanmade.latex：采用yanmade.latex作为latex模板
 - -N：表示在标题前面增加编号
 - -V documentclass=ym_article ：documentclass采用自定义的ym_article.cls
-- stdfw_user_manual.md  -o stdfw_user_manual.pdf  ： 指定输入和输出文件
+- stdfw_user_manual.md  -o stdfw_user_manual.pdf  ： 指定输入和输出文件，如果输入文件存在多个，则会将所有输入文件按照顺序组合成一个文件输出
 
 *注：使用此条命令时，需要将ym_article.cls，yanmade.latex等文件copy到stdfw_user_manual.md路径下*
 
