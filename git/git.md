@@ -11,7 +11,8 @@
 - [2. 《深入理解git》](#2-深入理解git)
   - [2.1. S3 Git入门指引](#21-s3-git入门指引)
   - [2.2. S4 Git重要命令操练](#22-s4-git重要命令操练)
-  - [2.3. S5:git添加/删除/修改/日志](#23-s5git添加删除修改日志)
+  - [2.3. S7 分支重要操作](#23-s7-分支重要操作)
+  - [S8:分支进阶与版本回退](#s8分支进阶与版本回退)
   - [2.4. 常用命令](#24-常用命令)
     - [2.4.1. 查看git版本](#241-查看git版本)
     - [2.4.2. 查看文件列表](#242-查看文件列表)
@@ -161,8 +162,99 @@ git 的commitid是一个摘要，这个摘要值根据sha1计算出来的，
 
 ---
 
-## 2.3. S5:git添加/删除/修改/日志
+## 2.3. S7 分支重要操作
 
+
+```bash {.line-numbers}
+# 创建doe分支并切换到doe分支
+git checkout -b doe 
+
+# 查看readme.md文件的内容
+cat README.md
+
+# 用vi编辑器编辑readme.md
+vi README.md
+
+# 将doe分支合并到当前分支，例如当前在master分支，则会将doe合并到master分支上
+01295@CY-20180208PUBU MINGW64 ~/temp/temp (master)
+$ git merge doe
+
+# 删除doe分支，只能删除已经合并的分支
+$ git branch -d doe
+
+# 显示日志
+$ git log
+
+# 显示最近3条日志
+$ git log -3
+
+# 显示各分支最近一次提交信息
+$ git branch -v
+
+# 将字符串hello Word 输出到文件hello.txt中，此操作会直接创建hello.txt
+$ echo 'hello world' > hello.txt
+
+# 进入.git子目录
+$ cd .git
+
+# 回到上一层目录
+01295@CY-20180208PUBU MINGW64 ~/temp/temp/.git (GIT_DIR!)
+$ cd ..
+
+# 列出当前路径下的所有文件及文件夹
+$ ls -al
+
+# 查看HEAD文件的内容，需要先进入.git文件夹
+$ cat HEAD
+ref: refs/heads/master
+
+# 将所有文件都添加到暂存区
+$ git add .
+
+
+```
+
+HEAD：指向的是当前分支ls
+
+## S8:分支进阶与版本回退
+
+
+```bash {.line-numbers}
+
+# 以图形化的方式查看log
+$ git log --graph
+
+# 返回到上一个分支
+$ git checkout -
+
+# add与commit合二为一
+$ git commit -am 'add hello world to readme.md'
+
+# commitID会采用缩写方式显示
+$ git log --graph --abbrev-commit
+
+# commit信息用单行的方式显示
+# commitID会采用缩写方式显示
+$ git log --graph --pretty=oneline --abbrev-commit
+
+# 回退到上一个版本
+$ git reset --hard HEAD^
+
+# 回退两个版本
+$ git reset --hard HEAD^^
+
+# 回退到指定提交
+# 格式：git reset --hard commitID简写
+$ git reset --hard 47d3
+
+# 回到之前的第n个提交
+# 格式：git reset --hard HEAD~n
+$ git reset --hard HEAD~3
+
+# 显示操作日志
+$ git reflog
+
+```
 
 ## 2.4. 常用命令
 

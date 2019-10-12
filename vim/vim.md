@@ -13,6 +13,11 @@
 
 # 1. Git Vim
 
+显示行号：
+
+> :set number
+
+
 ### 1.0.1. vim三种工作模式
 
 vi编辑器有三种模式：命令模式（command mode）、插入模式（Insert mode）、底行模式（last line mode）
