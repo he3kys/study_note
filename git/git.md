@@ -22,6 +22,9 @@
   - [S16：git远程分支、别名、GUI](#s16git远程分支-别名-gui)
   - [S17：git refspec](#s17git-refspec)
   - [S18:git refspec与远程标签](#s18git-refspec与远程标签)
+  - [S19:git远程分支的底层剖析](#s19git远程分支的底层剖析)
+  - [S21:git 裸库与submodule](#s21git-裸库与submodule)
+  - [S27:git rebase 实战](#s27git-rebase-实战)
   - [2.10. 常用命令](#210-常用命令)
     - [2.10.1. 查看git版本](#2101-查看git版本)
     - [2.10.2. 查看文件列表](#2102-查看文件列表)
@@ -523,6 +526,44 @@ git push origin --tags
 
 
 ```
+
+## S19:git远程分支的底层剖析
+
+
+```bash {.line-numbers}
+
+# 删除远程仓库的标签
+$ git push origin --delete tag V1.0
+
+# 删除本地标签
+$ git tag -d V1.0
+
+
+```
+## S21:git 裸库与submodule
+
+
+```bash {.line-numbers}
+# 添加一个submodule
+# 示例：将远程仓库stdlib添加本仓库
+$ git submodule add git@192.168.0.98:ee_group/fw_lib/stdlib.git
+
+# 添加一个submodlue到指定文件夹
+# 示例：将远程仓库stdlib添加本仓库FWLib文件夹中
+$ git submodule add git@192.168.0.98:ee_group/fw_lib/stdlib.git FWLib
+
+# 更新所有子模块
+$ git submodule foreach git pull
+
+# 克隆带submodule的仓库
+$ git submodule add git@192.168.0.98:ee_group/fw_lib/stdlib.git FWLib --recursive
+
+# 删除指定submodule
+
+```
+
+## S27:git rebase 实战
+
 
 ## 2.10. 常用命令
 

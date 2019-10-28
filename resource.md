@@ -9,9 +9,10 @@
   - [1.1.2. 办公软件](#112-办公软件)
   - [1.1.3. 下载软件](#113-下载软件)
   - [1.1.4. 待试用](#114-待试用)
-- [1.2. 学习资源](#12-学习资源)
-  - [1.2.1. HTML+CSS](#121-htmlcss)
-- [1.3. 其它](#13-其它)
+- [1.2. 其它](#12-其它)
+- [1.3. 学习资源](#13-学习资源)
+  - [1.3.1. HTML+CSS](#131-htmlcss)
+  - [1.3.2. 其它](#132-其它)
 
 <!-- /code_chunk_output -->
 
@@ -44,15 +45,42 @@
 - 免费流程图软件 [Dia Diagram Editor](https://sourceforge.net/projects/dia-installer/)
 - 免费思维导图[EDraw Mind Map](https://www.edrawsoft.com/freemind.php)
 
-## 1.2. 学习资源
+## 1.2. 其它
 
-### 1.2.1. HTML+CSS
+VPN工具：云梯
+
+
+
+## 1.3. 学习资源
+
+### 1.3.1. HTML+CSS
 
 - [w3school](https://www.w3school.com.cn/) : 全球最大的中文 Web 技术教程。
 - [w3c](https://www.w3.org/) : web技术标准制定者
 - [MDN](https://developer.mozilla.org/zh-CN/):web技术权威帮助网站
 
-## 1.3. 其它
+### 1.3.2. 其它
 
-VPN工具：云梯
-
+- 视频片头制作网站：
+    - [panzoid](https://panzoid.com/)  UP主：WillTV
+- 在线抠图网站
+    - [remove](https://www.remove.bg/)
+- 免费字体网站：
+    - [zitijia](https://www.zitijia.com/)
+- 免费论文下载网站
+    - [iData](https://www.cn-ki.net/)
+- 在线文档转换网站
+    - [smallPdf](https://smallpdf.com/cn)
+- 远程控制
+    - [Airdroid](https://www.airdroid.com/zh-cn/)
+- 高清图片下载
+    - [pexels](https://www.pexels.com/)
+- 网站索引
+    - [addog](http://www.addog.vip/)
+- 简历制作
+    - [超级简历](https://www.wondercv.com/)
+- 有意思的网站
+    - AI智能生成图片网站 [nvidia](http://nvidia-research-mingyuliu.com/gaugan/)
+    - [WebGL](https://alteredqualia.com/)
+    - 自动生成唯美水墨画风图 [color-wander](http://color-wander.surge.sh/)
+    - 全景网站 [720yun](https://720yun.com/) 
