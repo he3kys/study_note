@@ -10,43 +10,42 @@
     - [1.1.3. 合并分支](#113-合并分支)
     - [1.1.4. 删除分支](#114-删除分支)
     - [1.1.5. 版本回退](#115-版本回退)
-    - [其它操作](#其它操作)
+    - [1.1.6. 其它操作](#116-其它操作)
   - [1.2. 文件操作](#12-文件操作)
   - [1.3. 状态变迁](#13-状态变迁)
     - [1.3.1. 工作区和暂存区间的迁移](#131-工作区和暂存区间的迁移)
     - [1.3.2. 暂存区和本地仓库间的迁移](#132-暂存区和本地仓库间的迁移)
-    - [其它](#其它)
-  - [1.4. 其它](#14-其它)
-    - [1.4.1. 查看信息](#141-查看信息)
-    - [1.4.2. 用户信息配置](#142-用户信息配置)
+    - [1.3.3. 远程仓库](#133-远程仓库)
+    - [1.3.4. 临时保存](#134-临时保存)
+  - [1.4. 标签](#14-标签)
+  - [1.5. 比较](#15-比较)
+  - [1.6. 其它](#16-其它)
+    - [1.6.1. 查看信息](#161-查看信息)
+    - [1.6.2. 用户信息配置](#162-用户信息配置)
 - [2. 《深入理解git》学习笔记](#2-深入理解git学习笔记)
-  - [2.1. S4 Git重要命令操练](#21-s4-git重要命令操练)
-  - [2.3. S10:标签与diff](#23-s10标签与diff)
-  - [2.4. S11：远程与github](#24-s11远程与github)
-  - [2.5. S12 : git远程操作](#25-s12-git远程操作)
-  - [2.6. S13：git协作](#26-s13git协作)
-  - [2.7. S15:git分支最佳实践](#27-s15git分支最佳实践)
-  - [2.8. S16：git远程分支、别名、GUI](#28-s16git远程分支-别名-gui)
-  - [2.9. S17：git refspec](#29-s17git-refspec)
-  - [2.10. S18:git refspec与远程标签](#210-s18git-refspec与远程标签)
-  - [2.11. S19:git远程分支的底层剖析](#211-s19git远程分支的底层剖析)
-  - [2.12. S21:git 裸库与submodule](#212-s21git-裸库与submodule)
-  - [2.15. 常用命令](#215-常用命令)
-    - [2.15.2. 查看文件列表](#2152-查看文件列表)
-  - [2.16. Mac操作](#216-mac操作)
 - [3. FAQ](#3-faq)
   - [3.1. gitignore 文件不生效](#31-gitignore-文件不生效)
 - [4. 相关资料](#4-相关资料)
   - [4.1. 网站与网页](#41-网站与网页)
-  - [参考文档](#参考文档)
-  - [教学视频](#教学视频)
-  - [4.2. 相关软件](#42-相关软件)
+  - [4.2. 参考文档](#42-参考文档)
+  - [4.3. 教学视频](#43-教学视频)
+  - [4.4. 相关软件](#44-相关软件)
 
 <!-- /code_chunk_output -->
 
 # 1. 总结
 
+![git常用命令](./Fig/GitCommonCommand.png){#fig:GitCommonCommand}
+
 ## 1.1. 分支操作
+
+git常用分支开发模型：
+
+- develop分支：频繁变化的一个分支
+- test分支：供测试与产品等人员使用的一个分支，变化不是特别频繁
+- master分支：生产发布分支，变化非常不频繁的分支
+- bugfix分支：生产系统中出现了紧急bug，用于紧急修复多的分支
+- hotfix分支：master分支上出现了严重bug，需要紧急修复，修复完后需要立马合并的master分支进行发布，类似于补丁发布
 
 ### 1.1.1. 创建分支
 
@@ -57,6 +56,9 @@ git checkout -b doe
 # 从develop分支创建一个feature分支，并跳转到feature分支
 git checkout -b feature develop
 
+# 从指定分支创建分支
+# 示例：基于远程origin/develop创建分支develop
+git checkout -b develop origin/develop
 ```
 
 ### 1.1.2. 分支切换
@@ -68,8 +70,6 @@ git checkout -b feature develop
 git checkout -
 
 ```
-
-
 
 ### 1.1.3. 合并分支
 
@@ -85,7 +85,6 @@ git checkout -
 git merge doe
 
 ```
-
 
 参考：
 [git-merge完全解析](https://www.jianshu.com/p/58a166f24c81)
@@ -129,13 +128,16 @@ git reset --hard 47d3
 git reset --hard HEAD~3
 ```
 
-### 其它操作
+### 1.1.6. 其它操作
 
 
 ```bash {.line-numbers}
 # 分支改名
 # 说明：将doe分支的名字改为doe1
 git branch -m doe doe1
+
+# 设置别名
+git config --global alias.br branch
 
 ```
 
@@ -147,6 +149,12 @@ git branch -m doe doe1
 ```bash {.line-numbers}
 # 回到上层目录
 cd ..
+
+# 回到home路径
+cd ~
+
+# 创建文件夹
+mkdir temp_test
 
 # 进入.git子目录
 cd .git
@@ -172,6 +180,7 @@ rm -rf .git
 # 将字符串hello Word 输出到文件hello.txt中，此操作会直接创建hello.txt
 echo 'hello world' > hello.txt
 
+
 ```
 
 ## 1.3. 状态变迁
@@ -187,9 +196,12 @@ echo 'hello world' > hello.txt
 
 ### 1.3.1. 工作区和暂存区间的迁移
 
+git add的作用
+1. 将未跟踪的文件添加到跟踪列表
+1. 将已经被追踪的文件纳入缓存区中
+1. 冲突修改完后，用此命令标识冲突已解决
+
 ```bash {.line-numbers}
-# 查看工作区状态
-git status
 
 # 舍弃刚才进行的修改，使之与暂存区中的内容保持一致
 # 实验过程：
@@ -232,7 +244,48 @@ git commit -am 'add hello world to readme.md'
 
 ```
 
-### 其它
+### 1.3.3. 远程仓库
+
+push ：推送
+pull：拉取，同时会执行合并 = fetch + merge
+
+```bash {.line-numbers}
+# 采用公钥的方式访问github
+# 步骤：
+# 1. 采用git remote add设置ssh形式的远程git地址
+# 2. 查看本地公钥
+# 3. 生成公钥和私钥
+# 4. 将公钥.pub里的内容放到github上
+git remote add origin git@github.com:gitlecture/gitlecture.git
+cat ~/.ssh/known_hosts
+ssh-keygen
+
+
+# 将本地已有仓库推送到指定远程仓库
+# 步骤
+# 1. 调用git remote add命令设置一个远程仓库
+# 2. 将本地master分支和远程master分支做关联
+git remote add origin https://github.com/gitlecture/gitlecture.git
+git push -u origin master 
+
+# clone 仓库
+git clone git@192.168.0.98:KangYashuai_01295/temp.git
+
+# git pull时出现冲突时的解决流程
+# 1. 用编辑器获取其它编辑器修改冲突部分，冲突部分git会做标记
+# 2. 查看哪些文件哪些行发生冲突：git diff
+# 2. 修改完冲突后调用git add命令标识当前冲突已解决
+# 3. 调用git commit命令提交修改，git commit后面不需要增加其他参数，会自动进入冲突合并信息中
+01295@CY-20180208PUBU MINGW64 ~/temp/temp_test/temp (doe|MERGING)
+git diff
+vi README.md
+git add README.md
+git commit
+
+```
+
+
+### 1.3.4. 临时保存
 
 
 ```bash {.line-numbers}
@@ -257,10 +310,86 @@ git stash pop # 调用此命令将刚才临时保存的内容恢复到工作区�
 
 ```
 
+## 1.4. 标签
 
-## 1.4. 其它
+- 标签有两种：轻量级标签（lightweight）与带有附注的标签（annotated）
+- 创建一个轻量级的标签：git tag V1.0.1
+- 创建一个带有附注的标签：git tag -a v1.0.2 -m 'release version'
+- 删除标签：git tag -d tag_name
 
-### 1.4.1. 查看信息
+
+```bash {.line-numbers}
+
+# 添加标签
+git tag V1.0.0
+
+# 删除标签
+git tag -d V1.0.0
+
+# 查看标签
+git tag
+
+# 查找标签（支持常见的正则表达式）
+git tag -l 'V1.0'
+git tag -l 'V1*'
+
+# 带注释的标签
+git tag V2.0 -m 'V2.0 release '
+
+# 显示指定标签信息
+git show V1.0
+
+# 将标签推送到远程
+# 示例：将V1.0的标签推送到远程
+git push origin V1.0
+
+# 示例：将V2.0，V3.0的标签推送到远程
+git push origin V2.0 V3.0
+
+# 示例：将所有标签推送到远程
+git push origin --tags
+
+# 删除远程仓库的标签
+git push origin --delete tag V1.0
+
+# 删除本地标签
+git tag -d V1.0
+
+```
+
+## 1.5. 比较
+
+```bash {.line-numbers}
+
+# 比较暂存区和工作区的差别
+# 实验方法：
+# 1. 修改readme.md并保存
+# 1. 调用git diff命令比较工作区和暂存区的区别
+# 
+# 输出说明：
+# --- a/README.md （三个减号表示原文件，也就是暂存区中的文件）
+# +++ b/README.md（三个加号表示目标文件，也就是工作区中的文件）
+# @@ -3,3 +3,5 @@ test （前面的-3表示原文件从第3行开始存在差异，后面的3表示总共有三行，后面的+3表示目标文件从 第三行开始存在差异，总共有5行）
+git diff
+
+# 比较最新提交和工作区之间的差别
+git diff HEAD
+
+# 比较指定提交和工作区之间的差别
+# 命令格式：git diff commitID
+git diff cb62915
+
+# 比较最新提交和暂存区之间的区别
+git diff --cached
+
+# 比较指定提交和暂存区之间的区别
+git diff --cached cb62915
+
+```
+
+## 1.6. 其它
+
+### 1.6.1. 查看信息
 
 ```bash {.line-numbers}
 # 查看提交日志
@@ -292,190 +421,8 @@ git checkout --help
 # 查看git版本：打开cmd，输入
 git --version
 
-```
-
-### 1.4.2. 用户信息配置
-
-对于user.name与user.email来说有三个地方可以设置：
-
-- /etc/gitconfig : 整个计算机的范围，也就是无论这台电脑有多少用户，都用这一个设置（几乎不会使用）,配置方式为：git config --system
-- ~/.gitconfig : 用户主目录（经常使用）,配置方式为：git config --global
-- 针对于特定项目的，在当前工程的.git/config文件中，配置方式为：git config --local
-
-
-# 2. 《深入理解git》学习笔记
-
-视频来源：哔哩哔哩
-讲师：风中叶
-
-## 2.1. S4 Git重要命令操练
-
-![git常用命令](./Fig/GitCommonCommand.png){#fig:GitCommonCommand}
-
-## 2.3. S10:标签与diff
-
-- 标签有两种：轻量级标签（lightweight）与带有附注的标签（annotated）
-- 创建一个轻量级的标签：git tag V1.0.1
-- 创建一个带有附注的标签：git tag -a v1.0.2 -m 'release version'
-- 删除标签：git tag -d tag_name
-
-```bash {.line-numbers}
-
-# 添加标签
-git tag V1.0.0
-
-# 删除标签
-git tag -d V1.0.0
-
-# 查看标签
-git tag
-
-# 查找标签（支持常见的正则表达式）
-git tag -l 'V1.0'
-git tag -l 'V1*'
-
 # 查看某个文件的修改历史
 git blame README.md
-
-# 比较暂存区和工作区的差别
-# 实验方法：
-# 1. 修改readme.md并保存
-# 1. 调用git diff命令比较工作区和暂存区的区别
-# 
-# 输出说明：
-# --- a/README.md （三个减号表示原文件，也就是暂存区中的文件）
-# +++ b/README.md（三个加号表示目标文件，也就是工作区中的文件）
-# @@ -3,3 +3,5 @@ test （前面的-3表示原文件从第3行开始存在差异，后面的3表示总共有三行，后面的+3表示目标文件从 第三行开始存在差异，总共有5行）
-git diff
-
-# 比较最新提交和工作区之间的差别
-git diff HEAD
-
-# 比较指定提交和工作区之间的差别
-# 命令格式：git diff commitID
-git diff cb62915
-
-# 比较最新提交和暂存区之间的区别
-git diff --cached
-
-# 比较指定提交和暂存区之间的区别
-git diff --cached cb62915
-
-```
-
-## 2.4. S11：远程与github
-
-push ：推送
-pull：拉取，同时会执行合并 = fetch + merge
-
-```bash {.line-numbers}
-
-# 查看config文件的内容
-git config --list
-
-# 将本地已有仓库推送到指定远程仓库
-# 步骤
-# 1. 调用git remote add命令设置一个远程仓库
-# 2. 将本地master分支和远程master分支做关联
-git remote add origin https://github.com/gitlecture/gitlecture.git
-git push -u origin master 
-
-```
-## 2.5. S12 : git远程操作
-
-git常用分支开发模型：
-
-- develop分支：频繁变化的一个分支
-- test分支：供测试与产品等人员使用的一个分支，变化不是特别频繁
-- master分支：生产发布分支，变化非常不频繁的分支
-- bugfix分支：生产系统中出现了紧急bug，用于紧急修复多的分支
-- hotfix分支：master分支上出现了严重bug，需要紧急修复，修复完后需要立马合并的master分支进行发布，类似于补丁发布
-
-
-
-```bash {.line-numbers}
-# 显示远程仓库
-# 当存在多个远程仓库时，可以调用此命令显示远程仓库的名字
-git remote show
-
-# 显示origin远程仓库的详细信息
-git remote show origin
-
-# 回到home路径
-cd ~
-
-# 采用公钥的方式访问github
-# 步骤：
-# 1. 采用git remote add设置ssh形式的远程git地址
-# 2. 查看本地公钥
-# 3. 生成公钥和私钥
-# 4. 将公钥.pub里的内容放到github上
-git remote add origin git@github.com:gitlecture/gitlecture.git
-cat ~/.ssh/known_hosts
-ssh-keygen
-
-```
-
-## 2.6. S13：git协作
-
-```bash {.line-numbers}
-# 查看环境变量
-echo $PATH
-
-# 查看本地和远程分支信息
-git branch -a
-git branch -av
-
-```
-
-## 2.7. S15:git分支最佳实践
-
-
-```bash {.line-numbers}
-# 创建文件夹
-mkdir temp_test
-
-# clone 仓库
-git clone git@192.168.0.98:KangYashuai_01295/temp.git
-
-# 查看本地配置文件
-git config --local --list
-
-# 查看全局配置文件
-git config --list
-
-# 设置本地名字
-git config --local user.name 'test'
-
-# 设置本地邮箱地址
-git config --local user.email 'test@qq.com'
-
-
-# 查看远程仓库信息
-git remote show origin
-
-# git pull时出现冲突时的解决流程
-# 1. 用编辑器获取其它编辑器修改冲突部分，冲突部分git会做标记
-# 2. 查看哪些文件哪些行发生冲突：git diff
-# 2. 修改完冲突后调用git add命令标识当前冲突已解决
-# 3. 调用git commit命令提交修改，git commit后面不需要增加其他参数，会自动进入冲突合并信息中
-01295@CY-20180208PUBU MINGW64 ~/temp/temp_test/temp (doe|MERGING)
-git diff
-vi README.md
-git add README.md
-git commit
-
-```
-
-git add的作用
-1. 将未跟踪的文件添加到跟踪列表
-1. 将已经被追踪的文件纳入缓存区中
-1. 冲突修改完后，用此命令标识冲突已解决
-
-## 2.8. S16：git远程分支、别名、GUI
-
-
-```bash {.line-numbers}
 
 # 查看可执行程序所在路径
 # 语法格式：which 可执行文件名字
@@ -487,69 +434,58 @@ gitk
 # 打开git gui界面
 git gui
 
-```
+# 查看config文件的内容
+git config --list
 
-## 2.9. S17：git refspec
+# 显示远程仓库
+# 当存在多个远程仓库时，可以调用此命令显示远程仓库的名字
+git remote show
 
-```bash {.line-numbers}
+# 查看环境变量
+echo $PATH
 
-# 设置别名
-git config --global alias.br branch
+# 查看本地和远程分支信息
+git branch -a
+git branch -av
 
-# 从指定分支创建分支
-# 示例：基于远程origin/develop创建分支develop
-git checkout -b develop origin/develop
+# 查看本地配置文件
+git config --local --list
 
-# 删除本地分支
-# 示例：删除本地doe分支
-git br -d doe
+# 查看全局配置文件
+git config --list
 
-# 删除远程分支
-# 示例：删除远程doe分支
-git push origin --delete doe
-
-
-```
-
-## 2.10. S18:git refspec与远程标签
-
-
-```bash {.line-numbers}
 # 查看本地分支和远程分支的关系
 git remote show origin
 
-# 带注释的标签
-git tag V2.0 -m 'V2.0 release '
-
-# 显示指定标签信息
-git show V1.0
-
-# 将标签推送到远程
-# 示例：将V1.0的标签推送到远程
-git push origin V1.0
-# 示例：将V2.0，V3.0的标签推送到远程
-git push origin V2.0 V3.0
-# 示例：将所有标签推送到远程
-git push origin --tags
-
-
+# 查看工作区状态
+git status
 
 ```
 
-## 2.11. S19:git远程分支的底层剖析
+### 1.6.2. 用户信息配置
+
+对于user.name与user.email来说有三个地方可以设置：
+
+- /etc/gitconfig : 整个计算机的范围，也就是无论这台电脑有多少用户，都用这一个设置（几乎不会使用）,配置方式为：git config --system
+- ~/.gitconfig : 用户主目录（经常使用）,配置方式为：git config --global
+- 针对于特定项目的，在当前工程的.git/config文件中，配置方式为：git config --local
 
 
 ```bash {.line-numbers}
+# 设置本地名字
+git config --local user.name 'test'
 
-# 删除远程仓库的标签
-git push origin --delete tag V1.0
-
-# 删除本地标签
-git tag -d V1.0
-
-
+# 设置本地邮箱地址
+git config --local user.email 'test@qq.com'
 ```
-## 2.12. S21:git 裸库与submodule
+
+
+# 2. 《深入理解git》学习笔记
+
+视频来源：哔哩哔哩
+讲师：风中叶
+
+**git 裸库与submodule**
 
 
 ```bash {.line-numbers}
@@ -571,17 +507,7 @@ git submodule add git@192.168.0.98:ee_group/fw_lib/stdlib.git FWLib --recursive
 
 ```
 
-
-## 2.15. 常用命令
-
-
-### 2.15.2. 查看文件列表
-
-在git bash中输入：
-> ls : 查看文件
-> ls -al ：查看文件及其详细信息
-
-## 2.16. Mac操作
+**Mac操作**
 
 命令行工具：
 > bash : 自带的
@@ -590,7 +516,6 @@ git submodule add git@192.168.0.98:ee_group/fw_lib/stdlib.git FWLib --recursive
 
 清屏：
 > Ctrl+L 或者 clear
-
 
 
 # 3. FAQ 
@@ -618,13 +543,13 @@ git commit -m 'update .gitignore'
 1. [图解git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html?no-svg)
 1. [动画学git](https://learngitbranching.js.org/)
 
-## 参考文档
+## 4.2. 参考文档
 
-## 教学视频
+## 4.3. 教学视频
 
 1. [深入理解git](https://www.bilibili.com/video/av52286788?from=search&seid=3315075663787750735) ：哔哩哔哩-风中叶
 
-## 4.2. 相关软件
+## 4.4. 相关软件
 
 - GIT客户端：[SourceTree](https://www.sourcetreeapp.com/) 颜值高，功能非常强大
 - GIT客户端：[Tower Pro](https://www.git-tower.com/) 颜值高，功能非常强大
