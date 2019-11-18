@@ -25,10 +25,10 @@
 - [2. 《深入理解git》学习笔记](#2-深入理解git学习笔记)
 - [3. FAQ](#3-faq)
   - [3.1. gitignore 文件不生效](#31-gitignore-文件不生效)
-- [4. 相关资料](#4-相关资料)
-  - [4.1. 网站与网页](#41-网站与网页)
-  - [4.2. 参考文档](#42-参考文档)
-  - [4.3. 教学视频](#43-教学视频)
+- [4. 参考资料](#4-参考资料)
+  - [4.1. 网站](#41-网站)
+  - [4.2. 文档](#42-文档)
+  - [4.3. 视频](#43-视频)
   - [4.4. 相关软件](#44-相关软件)
 
 <!-- /code_chunk_output -->
@@ -69,21 +69,16 @@ git checkout -b develop origin/develop
 # 返回到上一个分支
 git checkout -
 
+# 切换到dev分支
+git checkout dev
+
 ```
 
 ### 1.1.3. 合并分支
 
-将feature分支合并到develop分支
-
-> git checkout develop
-> git merge --no-ff feature
-
-
-
 ```bash {.line-numbers}
 # 将doe分支合并到当前分支，假如当前在master分支，则会将doe合并到master分支上
 git merge doe
-
 ```
 
 参考：
@@ -517,6 +512,10 @@ git submodule add git@192.168.0.98:ee_group/fw_lib/stdlib.git FWLib --recursive
 清屏：
 > Ctrl+L 或者 clear
 
+**资源**
+
+- GitBook ： 采用markdown语法
+
 
 # 3. FAQ 
 
@@ -532,9 +531,9 @@ git commit -m 'update .gitignore'
 ```
 
 
-# 4. 相关资料
+# 4. 参考资料
 
-## 4.1. 网站与网页
+## 4.1. 网站
 1. [git官网](http://www.git-scm.com)
 1. [Git分支管理策略](http://www.ruanyifeng.com/blog/2012/07/git.html)
 1. [官方图书和文档](https://git-scm.com/book/zh/v2)
@@ -543,9 +542,9 @@ git commit -m 'update .gitignore'
 1. [图解git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html?no-svg)
 1. [动画学git](https://learngitbranching.js.org/)
 
-## 4.2. 参考文档
+## 4.2. 文档
 
-## 4.3. 教学视频
+## 4.3. 视频
 
 1. [深入理解git](https://www.bilibili.com/video/av52286788?from=search&seid=3315075663787750735) ：哔哩哔哩-风中叶
 
