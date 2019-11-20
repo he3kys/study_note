@@ -105,6 +105,26 @@ git push origin --delete developbranch
 
 注意：删除分支就不可以撤销。删除分支前需要慎重。
 
+### rebase
+
+rebase 一般用于整理提交信息，让提价信息看起来更加线性化
+
+```bash {.line-numbers}
+# 将doe分支合并到dev分支
+# 步骤：
+# 1. 切换到dev分支
+# 2. 调用git rebase -i doe
+
+# 将本分支的前几次提交压缩为一个提交
+# 步骤：
+# 1. git rebase -i commtid  或者 git rebase -i HEAD~2
+# 2. git会自动调出vim，需要在vim中选择需要压缩或者保留的分支，如果需要保留就选择pick，如果需要压缩就选择s
+# 3. 解决冲突 -> 将冲突文件add到版本库 -> git rebase --continue 
+# 4. 填写rebase信息
+# 5. 强制推送 git push -f 
+
+```
+
 ### 1.1.5. 版本回退
 
 ```bash {.line-numbers}
