@@ -52,6 +52,97 @@ html body h6 {
     font-weight: 600
 }
 
+h1 {
+    counter-increment: counter_h1;
+    counter-reset: counter_h2;
+}
+
+h2 {
+    counter-increment: counter_h2;
+    counter-reset: counter_h3;
+}
+
+h3 {
+    counter-increment: counter_h3;
+    counter-reset: counter_h4;
+}
+
+h4 {
+    counter-increment: counter_h4;
+    counter-reset: counter_h5;
+}
+
+h5 {
+    counter-increment: counter_h5;
+}
+
+
+h1::before {
+    content: counter(counter_h1)". ";
+}
+h2::before {
+    content: counter(counter_h1)"."counter(counter_h2)" ";
+}
+h3::before {
+    content: counter(counter_h1)"."counter(counter_h2)"."counter(counter_h3)" ";
+}
+h4::before {
+    content: counter(counter_h1)"."counter(counter_h2)"."counter(counter_h3)"."counter(counter_h4)" ";
+}
+h5::before {
+    content: counter(counter_h1)"."counter(counter_h2)"."counter(counter_h3)"."counter(counter_h4)"."counter(counter_h5)" ";
+}
+
+
+/* h1 {
+    counter-reset: one;
+}
+
+h1 {
+    counter-reset: one;
+}
+
+h1:before {
+    counter-increment: one;
+    content: counter(one) ". ";
+} */
+
+/* h2 {
+    counter-reset: two;
+}
+
+h2:before {
+    counter-increment: two;
+    content: counter(one) "." counter(two) ". ";
+}
+
+h3 {
+    counter-reset: three;
+}
+
+h3:before {
+    counter-increment: two;
+    content: counter(one) "." counter(two) "." counter(three) ". ";
+}
+
+h4 {
+    counter-reset: four;
+}
+
+h4:before {
+    counter-increment: three;
+    content: counter(one) "." counter(two) "." counter(three) "." counter(four) ". ";
+}
+
+h5 {
+    counter-reset: five;
+}
+
+h5:before {
+    counter-increment: four;
+    content: counter(one) "." counter(two) "." counter(three) "." counter(four) ". ";
+} */
+
 html body h1, html body h2, html body h3, html body h4, html body h5 {
     font-weight: 600
 }
@@ -65,7 +156,7 @@ html body h6 {
 }
 
 html body strong {
-    color: rgba(23, 37, 240, 0.719)
+    color: rgba(48, 207, 75, 0.575)
 }
 
 html body del {
