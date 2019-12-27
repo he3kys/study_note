@@ -1,0 +1,53 @@
+{
+    "python.pythonPath": "C:\\Users\\01295\\AppData\\Local\\Programs\\Python\\Python36",
+    "python.jediEnabled": false,
+    "C_Cpp.updateChannel": "Insiders",
+    "markdown-pdf.executablePath": "C:\\Users\\01295\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe",
+    "git.autofetch": true,
+    
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.renderWhitespace": "all",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        },
+        "editor.acceptSuggestionOnEnter": "on"
+    },
+    "window.zoomLevel": 0,
+    "markdown.extension.print.absoluteImgPath": false,
+    "editor.minimap.enabled": false,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "[css]": {
+        "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+    },
+    "markdown-preview-enhanced.previewTheme": "github-dark.css",
+    "C_Cpp.default.cStandard": "c99",
+    "C_Cpp.default.intelliSenseMode": "msvc-x64",
+    "C_Cpp.enhancedColorization": "Disabled",
+    "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+    "markdown-preview-enhanced.enableHTML5Embed": true,
+    "markdown-preview-enhanced.imageFolderPath": "/Fig",
+    "markdown-preview-enhanced.latexEngine": "xelatex",
+    "pandoc.pdfOptString": "--pdf-engine=xelatex --template=D:/HOME/Templates/template.tex",
+    "latex-preview.command": "xelatex",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "editor.fontSize": 17,
+    "pandoc.docxOptString": "--toc -f markdown+fenced_code_blocks",
+    "markdown-preview-enhanced.pandocPath": "C:\\Program Files\\Pandoc\\pandoc.exe",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "explorer.confirmDelete": false,
+    "files.autoGuessEncoding": true,
+    "C_Cpp.configurationWarnings": "Disabled",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "terminal.integrated.rendererType": "dom",
+    "http.proxySupport": "off",
+}

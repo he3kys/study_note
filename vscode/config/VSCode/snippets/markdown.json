@@ -1,0 +1,226 @@
+{
+    "insert url": {
+        "description": "插入超链接",
+        "prefix": "url",
+        "body": ["[$1]($2)"],
+    },
+    "insert png Fig": {
+        "description": "插入图片",
+        "prefix": "figp",
+        "body": ["", "![$1](./Fig/$2.png){#fig:$2}", "$0"],
+    },
+    "insert gif Fig": {
+        "description": "插入图片",
+        "prefix": "figg",
+        "body": ["", "![$1](./Fig/$2.gif){#fig:$2}", "$0"],
+    },
+    "code block of c": {
+        "description": "插入c代码块",
+        "prefix": "cc",
+        "body": ["", "```c {.line-numbers}", "$1", "```", "$0"],
+    },
+    "code block of java": {
+        "description": "插入java代码块",
+        "prefix": "cj",
+        "body": ["", "```java {.line-numbers}", "$1", "```", "$0"],
+    },
+    "code block of javascript": {
+        "description": "插入javascript代码块",
+        "prefix": "cjs",
+        "body": ["", "```javascript {.line-numbers}", "$1", "```", "$0"],
+    },
+    "code block of html": {
+        "description": "插入html代码块",
+        "prefix": "ch",
+        "body": ["", "```html {.line-numbers}", "$1", "```", "$0"],
+    },
+    "code block of bash": {
+        "description": "插入bash代码块",
+        "prefix": "cb",
+        "body": ["", "```bash {.line-numbers}", "$1", "```", "$0"],
+    },
+    "code block of json": {
+        "description": "插入json配置",
+        "prefix": "cjson",
+        "body": ["", "```json {.line-numbers}", "$1", "```", "$0"],
+    },
+    "code block of asm": {
+        "description": "插入汇编代码",
+        "prefix": "casm",
+        "body": ["", "```asm {.line-numbers}", "$1", "```", "$0"],
+    },
+    "code block of css": {
+        "description": "插入css代码",
+        "prefix": "ccss",
+        "body": ["", "```css {.line-numbers}", "$1", "```", "$0"],
+    },
+    "code block of python": {
+        "description": "插入python代码",
+        "prefix": "cp",
+        "body": ["", "```python {.line-numbers}", "$1", "```", "$0"],
+    },
+    "code block ": {
+        "description": "插入代码",
+        "prefix": "code",
+        "body": ["", "``` {.line-numbers}", "$1", "```", "$0"],
+    },
+    "insert bold text": {
+        "description": "插入加粗文本",
+        "prefix": "bt",
+        "body": ["**$1**$0 "],
+    },
+    "insert todo list": {
+        "description": "插入待办事项",
+        "prefix": "td",
+        "body": ["- [ ] "],
+    },
+    "insert plan header": {
+        "description": "插入计划header",
+        "prefix": "ph",
+        "body": ["**$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE**",
+            "",
+            "- $1 = $2h",
+            "",
+            "---"
+        ],
+    },
+    "insert plan item": {
+        "description": "插入一条计划item",
+        "prefix": "pi",
+        "body": ["- $1 = $2h",
+            "$0"
+        ],
+    },
+    "sign in": {
+        "description": "sign in for habit",
+        "prefix": "si",
+        "body": ["- [x] $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+            ""
+        ],
+    },
+    "FAQ": {
+        "description": "插入一条FAQ",
+        "prefix": "faq",
+        "body": [
+            "### $1 {#$1}",
+            "<!--1. [$1](#$1) -->",
+            "",
+            "**当前日期：** $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+            "",
+            "**现象描述：** $2",
+            "",
+            "**原因分析：** $3",
+            "",
+            "**解决对策：** $4",
+            "$0"
+        ],
+    },
+    "single choice questions":
+    {
+        "description": "插入一个单选题",
+        "prefix": "sc",
+        "body": [
+            "    [单选题]$3？$4",
+            "    A. $5",
+            "    B. $6",
+            "    C. $7",
+            "    D. $8",
+            "    [答案]A     [分数]5     [分类]$1     [标签]$2",
+            "    [解析]",
+            "",
+            "<br>",
+            "",
+            "<br>",
+            "",
+            "$0"
+        ]
+    },
+    "multi choice questions":
+    {
+        "description": "插入一个多选题",
+        "prefix": "mc",
+        "body": [
+            "    [多选题]$3？$4",
+            "    A. $5",
+            "    B. $6",
+            "    C. $7",
+            "    D. $8",
+            "    [答案]A     [分数]5     [分类]$1     [标签]$2",
+            "    [解析]",
+            "",
+            "<br>",
+            "",
+            "<br>",
+            "",
+            "$0"
+        ]
+    },
+    "essay questions":
+    {
+        "description": "插入一个问答题",
+        "prefix": "eq",
+        "body": [
+            "    [问答题]$3？$4",
+            "    [答案] $5",    
+            "    [分数]10     [分类]$1     [标签]$2",
+            "    [解析] $6",
+            "",
+            "<br>",
+            "",
+            "<br>",
+            "",
+            "$0"
+        ]
+    },
+    "insert current time":
+    {
+        "description": "插入当前时间",
+        "prefix": "time",
+        "body": [
+            "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            "$0"
+        ]
+    },
+    "insert interview record":
+    {
+        "description": "插入一条面试记录",
+        "prefix": "ir",
+        "body": [
+            "---",
+            "### $1($CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE)",
+            "**成绩**：绩点=$2(满分4), CET4=$3, 技术=$4(平均52), 逻辑=$5(平均56), 性格=$6(平均42.5)",
+            "**评价**：",
+            "",
+            "**详细记录**:",   
+            "1. 你是通过什么方式获得燕麦科技的宣讲会信息？为什么会过来参加燕麦科技的招聘，哪些地方吸引到了你呢？",        
+            "》$7",
+            "$8",
+            "",
+            "<!-- 1. 1年中有2天通宵，20天加班到12点能否接收？",
+            "》 -->",
+            "",
+            "<!-- 1. 意向是研发还是技术支持？",
+            "》 -->",
+            "",
+            "<!-- 1. 是否能接受白夜班？",
+            "》 -->",
+            "",
+            "<!-- 1. 是否能接受各地出差？",
+            "》 -->",
+            "",
+            "<!-- 1. 对模电中哪些知识还有印象？",
+            "》 -->",
+            "",
+            "<!-- 1. 对数电中哪些知识还有印象？",
+            "》 -->",
+            "",
+            "<!-- 1. 对单片机中哪些知识还有印象？",
+            "》 -->",
+            "",
+            "- 开始时间：$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            "- 结束时间：",
+            "",
+            "<!-- 72小时内答复 -->",
+        ]
+    },
+}
