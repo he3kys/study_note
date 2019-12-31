@@ -1,43 +1,10 @@
+[toc]
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-
-<!-- code_chunk_output -->
-
-- [1. 总结](#1-总结)
-  - [1.1. 分支操作](#11-分支操作)
-    - [1.1.1. 创建分支](#111-创建分支)
-    - [1.1.2. 分支切换](#112-分支切换)
-    - [1.1.3. 合并分支](#113-合并分支)
-    - [1.1.4. 删除分支](#114-删除分支)
-    - [1.1.5. 版本回退](#115-版本回退)
-    - [1.1.6. 其它操作](#116-其它操作)
-  - [1.2. 文件操作](#12-文件操作)
-  - [1.3. 状态变迁](#13-状态变迁)
-    - [1.3.1. 工作区和暂存区间的迁移](#131-工作区和暂存区间的迁移)
-    - [1.3.2. 暂存区和本地仓库间的迁移](#132-暂存区和本地仓库间的迁移)
-    - [1.3.3. 远程仓库](#133-远程仓库)
-    - [1.3.4. 临时保存](#134-临时保存)
-  - [1.4. 标签](#14-标签)
-  - [1.5. 比较](#15-比较)
-  - [1.6. 其它](#16-其它)
-    - [1.6.1. 查看信息](#161-查看信息)
-    - [1.6.2. 用户信息配置](#162-用户信息配置)
-- [2. 《深入理解git》学习笔记](#2-深入理解git学习笔记)
-- [3. FAQ](#3-faq)
-  - [3.1. gitignore 文件不生效](#31-gitignore-文件不生效)
-- [4. 参考资料](#4-参考资料)
-  - [4.1. 网站](#41-网站)
-  - [4.2. 文档](#42-文档)
-  - [4.3. 视频](#43-视频)
-  - [4.4. 相关软件](#44-相关软件)
-
-<!-- /code_chunk_output -->
-
-# 1. 总结
+# 总结
 
 ![git常用命令](./Fig/GitCommonCommand.png){#fig:GitCommonCommand}
 
-## 1.1. 分支操作
+## 分支操作
 
 git常用分支开发模型：
 
@@ -47,7 +14,7 @@ git常用分支开发模型：
 - bugfix分支：生产系统中出现了紧急bug，用于紧急修复多的分支
 - hotfix分支：master分支上出现了严重bug，需要紧急修复，修复完后需要立马合并的master分支进行发布，类似于补丁发布
 
-### 1.1.1. 创建分支
+### 创建分支
 
 ```bash {.line-numbers}
 # 从当前分支创建doe分支并切换到doe分支
@@ -61,7 +28,7 @@ git checkout -b feature develop
 git checkout -b develop origin/develop
 ```
 
-### 1.1.2. 分支切换
+### 分支切换
 
 
 ```bash {.line-numbers}
@@ -74,7 +41,7 @@ git checkout dev
 
 ```
 
-### 1.1.3. 合并分支
+### 合并分支
 
 ```bash {.line-numbers}
 # 将doe分支合并到当前分支，假如当前在master分支，则会将doe合并到master分支上
@@ -84,7 +51,7 @@ git merge doe
 参考：
 [git-merge完全解析](https://www.jianshu.com/p/58a166f24c81)
 
-### 1.1.4. 删除分支
+### 删除分支
 
 常用删除分支操作：
 
@@ -125,7 +92,7 @@ rebase 一般用于整理提交信息，让提价信息看起来更加线性化
 
 ```
 
-### 1.1.5. 版本回退
+### 版本回退
 
 ```bash {.line-numbers}
 # 回退到上一个版本
@@ -143,7 +110,7 @@ git reset --hard 47d3
 git reset --hard HEAD~3
 ```
 
-### 1.1.6. 其它操作
+### 其它操作
 
 
 ```bash {.line-numbers}
@@ -157,7 +124,7 @@ git config --global alias.br branch
 ```
 
 
-## 1.2. 文件操作
+## 文件操作
 
 对于git工程，只有一个.git文件夹用于保存版本库信息，不像SVN在每个文件夹下都有一个.svn文件夹
 
@@ -198,7 +165,7 @@ echo 'hello world' > hello.txt
 
 ```
 
-## 1.3. 状态变迁
+## 状态变迁
 
 文件的三种状态：
 
@@ -209,7 +176,7 @@ echo 'hello world' > hello.txt
 ![git文件状态](./Fig/GitFileStatus.png){#fig:GitFileStatus}
 
 
-### 1.3.1. 工作区和暂存区间的迁移
+### 工作区和暂存区间的迁移
 
 git add的作用
 1. 将未跟踪的文件添加到跟踪列表
@@ -243,7 +210,7 @@ git reset HEAD README.md
 
 ```
 
-### 1.3.2. 暂存区和本地仓库间的迁移
+### 暂存区和本地仓库间的迁移
 
 git 的commitid是一个摘要，这个摘要值根据sha1计算出来的
 
@@ -259,7 +226,7 @@ git commit -am 'add hello world to readme.md'
 
 ```
 
-### 1.3.3. 远程仓库
+### 远程仓库
 
 push ：推送
 pull：拉取，同时会执行合并 = fetch + merge
@@ -300,7 +267,7 @@ git commit
 ```
 
 
-### 1.3.4. 临时保存
+### 临时保存
 
 
 ```bash {.line-numbers}
@@ -325,7 +292,7 @@ git stash pop # 调用此命令将刚才临时保存的内容恢复到工作区�
 
 ```
 
-## 1.4. 标签
+## 标签
 
 - 标签有两种：轻量级标签（lightweight）与带有附注的标签（annotated）
 - 创建一个轻量级的标签：git tag V1.0.1
@@ -372,7 +339,7 @@ git tag -d V1.0
 
 ```
 
-## 1.5. 比较
+## 比较
 
 ```bash {.line-numbers}
 
@@ -402,9 +369,9 @@ git diff --cached cb62915
 
 ```
 
-## 1.6. 其它
+## 其它
 
-### 1.6.1. 查看信息
+### 查看信息
 
 ```bash {.line-numbers}
 # 查看提交日志
@@ -477,7 +444,7 @@ git status
 
 ```
 
-### 1.6.2. 用户信息配置
+### 用户信息配置
 
 对于user.name与user.email来说有三个地方可以设置：
 
@@ -495,7 +462,7 @@ git config --local user.email 'test@qq.com'
 ```
 
 
-# 2. 《深入理解git》学习笔记
+# 《深入理解git》学习笔记
 
 视频来源：哔哩哔哩
 讲师：风中叶
@@ -537,9 +504,9 @@ git submodule add git@192.168.0.98:ee_group/fw_lib/stdlib.git FWLib --recursive
 - GitBook ： 采用markdown语法
 
 
-# 3. FAQ 
+# FAQ 
 
-## 3.1. gitignore 文件不生效
+## gitignore 文件不生效
 
 .gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交：
 
@@ -550,10 +517,9 @@ git add .
 git commit -m 'update .gitignore'
 ```
 
+# 参考资料
 
-# 4. 参考资料
-
-## 4.1. 网站
+## 网站
 1. [git官网](http://www.git-scm.com)
 1. [Git分支管理策略](http://www.ruanyifeng.com/blog/2012/07/git.html)
 1. [官方图书和文档](https://git-scm.com/book/zh/v2)
@@ -562,13 +528,13 @@ git commit -m 'update .gitignore'
 1. [图解git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html?no-svg)
 1. [动画学git](https://learngitbranching.js.org/)
 
-## 4.2. 文档
+## 文档
 
-## 4.3. 视频
+## 视频
 
 1. [深入理解git](https://www.bilibili.com/video/av52286788?from=search&seid=3315075663787750735) ：哔哩哔哩-风中叶
 
-## 4.4. 相关软件
+## 相关软件
 
 - GIT客户端：[SourceTree](https://www.sourcetreeapp.com/) 颜值高，功能非常强大
 - GIT客户端：[Tower Pro](https://www.git-tower.com/) 颜值高，功能非常强大
