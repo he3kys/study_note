@@ -1,33 +1,4 @@
-<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-
-<!-- code_chunk_output -->
-
-- [配置](#配置)
-  - [settings](#settings)
-  - [snippets : c.json](#snippets-cjson)
-  - [snippets : markdown.json](#snippets-markdownjson)
-  - [snippets中可以使用的变量](#snippets中可以使用的变量)
-- [插件](#插件)
-  - [Markdown TOC](#markdown-toc)
-  - [Markdown preview enhanced](#markdown-preview-enhanced)
-    - [为markdown文件添加目录](#为markdown文件添加目录)
-- [settings](#settings-1)
-  - [设置一个tab键对应的空格个数](#设置一个tab键对应的空格个数)
-  - [用户设置](#用户设置)
-- [snippets : c.json](#snippets-cjson-1)
-- [snippets : markdown.json](#snippets-markdownjson-1)
-- [snippets中可以使用的变量](#snippets中可以使用的变量-1)
-- [vscode插件--C语言](#vscode插件-c语言)
-- [Markdown TOC](#markdown-toc-1)
-- [Markdown preview enhanced](#markdown-preview-enhanced-1)
-  - [为markdown文件添加目录](#为markdown文件添加目录-1)
-  - [改变markdown显示格式](#改变markdown显示格式)
-  - [help](#help)
-- [vscode-pandoc](#vscode-pandoc)
-  - [环境搭建](#环境搭建)
-  - [生成pdf](#生成pdf)
-
-<!-- /code_chunk_output -->
+[TOC]
 
 # VSCode学习笔记
 
@@ -346,8 +317,6 @@ int main() {
 
 将光标定位到需要插入目录的位置 → 按Ctrl+Shift+P调出命令面板 → 输入toc → 选择Markdown preview enhanced:Ctreate TOC → 配置depthFrom=2，让目录从二级标题开始生成 → 点击Ctrl+S生成目录
 
-[toc]
-
 # 配置
 
 ## settings
@@ -610,3 +579,6 @@ pandoc -D latex >d:/template.tex
 
 按下Ctrl+Shit+P调出命令面板 → 输入“Pandoc Render”点击enter键 → 选择pdf文档 → 稍等片刻，pdf会在markdown所在目录下面生成pdf文件
 
+# 参考资料
+
+[使用VS Code打造完美的嵌入式IDE](https://blog.csdn.net/qq_34245464/article/details/100769643)

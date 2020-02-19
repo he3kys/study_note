@@ -369,6 +369,29 @@ git diff --cached cb62915
 
 ```
 
+## 修改远程仓库路径
+
+
+```bash {.line-numbers}
+# 查看远程仓库地址
+01295@CY-20180208PUBU MINGW64 ~/faraday/2020/d5x/fw/box2 (dev)
+$ git remote -v
+origin  git@192.168.0.98:faraday/2020/d5x/fw/box2.git (fetch)
+origin  git@192.168.0.98:faraday/2020/d53/AutomationTableFW/box2.git (push)
+
+# 设置新的远程仓库地址
+01295@CY-20180208PUBU MINGW64 ~/faraday/2020/d5x/fw/box2 (dev)
+$ git remote set-url origin git@192.168.0.98:faraday/2020/d53/AutomationTableFW/box2.git
+
+# 查看远程仓库地址
+01295@CY-20180208PUBU MINGW64 ~/faraday/2020/d5x/fw/box2 (dev)
+$ git remote -v
+origin  git@192.168.0.98:faraday/2020/d53/AutomationTableFW/box2.git (fetch)
+origin  git@192.168.0.98:faraday/2020/d53/AutomationTableFW/box2.git (push)
+
+```
+
+
 ## 其它
 
 ### 查看信息
